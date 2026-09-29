@@ -1,0 +1,14 @@
+{
+  "name": "quinta-santa-guilha",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website da Quinta de Santa Guilha — turismo rural em Gouveia, Serra da Estrela",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./css/styles.css --minify",
+    "dev": "tailwindcss -i ./src/input.css -o ./css/styles.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}
