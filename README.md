@@ -6,8 +6,8 @@ Projeto da unidade curricular **Desenvolvimento para a Web**, da Licenciatura em
 
 ## Grupo
 
-- João Filipe Loureiro da Silva
-- André Filipe Souza Kingwell
+- André Filipe Souza Kingwell a2024134754
+- João Filipe Loureiro da Silva a2024134076
 
 ## O projeto
 
