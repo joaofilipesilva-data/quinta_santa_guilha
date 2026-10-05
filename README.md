@@ -38,7 +38,7 @@ Início ....................... vídeo de drone ou imagem, slideshow e destaques
 ### Básicas
 
 - Menu de navegação em todas as páginas, com o submenu Informações (Sobre nós e Perguntas frequentes) e botão de menu no telemóvel
-- Design responsivo para telemóvel, tablet e computador, feito com Tailwind CSS
+- Design responsivo para telemóvel, tablet e computador
 - Página inicial com vídeo de drone ou imagem da quinta em ecrã inteiro (o vídeo passa em loop, sem som e com botão para pausar), com o menu por cima e o nome da quinta em baixo; o botão Reservar leva à página de reserva
 - Slideshow de fotografias na página inicial, que passa sozinho e tem setas e pontos para navegar
 - Páginas da casa, da quinta, da região e Sobre nós com textos e fotografias
@@ -89,4 +89,3 @@ Websites que serviram de referência e o que se aproveitou de cada um.
 | [São Lourenço do Barrocal](https://barrocal.pt/) | Vídeo em ecrã inteiro na abertura da página inicial e menu organizado com submenus. |
 | [Craveiral Farmhouse](https://www.craveiral.pt/) | Abertura em ecrã inteiro com imagens a passar, botão Reservar destacado no topo e destaques com fotografia e ligação para cada página. |
 | [Quinta da Estrela](https://quintadaestrela.com/pt-pt/) | Página própria sobre a quinta e website em várias línguas, ideia para a versão em inglês. |
-| [Tailwind CSS](https://tailwindcss.com/docs) | Documentação do framework CSS usado no projeto. |
