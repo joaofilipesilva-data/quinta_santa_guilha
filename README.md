@@ -51,7 +51,7 @@ Início ....................... vídeo de drone ou imagem, slideshow e destaques
 
 - "O ano na quinta": calendário interativo com o trabalho de cada mês e as horas de luz em Gouveia
 - Versão em inglês do website
-- Calendário de disponibilidade com as datas já ocupadas, lidas de um ficheiro JSON
+- Calendário de disponibilidade com as datas já ocupadas
 - Estimativa do preço da estadia conforme as datas e o número de hóspedes
 - Mapa interativo com os lugares a visitar na região
 - Envio do pedido de reserva diretamente do site, sem abrir o programa de email do visitante
