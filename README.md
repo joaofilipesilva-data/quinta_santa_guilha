@@ -21,40 +21,40 @@ O website tem oito páginas. O menu aparece em todas: o item Informações abre 
 
 ```
 Menu: Início | A Casa | A Quinta | Região | Galeria | Informações | Reservar
-
-Início ....................... vídeo de drone ou imagem, slideshow e destaques
-├── A Casa ................... espaços, comodidades e fotografias da casa
-├── A Quinta ................. olival, vinha, pomar e "O ano na quinta"
-├── Região ................... lugares a visitar e tempos de viagem
-├── Galeria .................. grelha de fotografias com visualizador
+ 
+Início ......................... apresentação da quinta e destaques das páginas
+├── A Casa ..................... espaços, comodidades e fotografias da casa
+├── A Quinta ................... olival, vinha, pomar e "O ano na quinta"
+├── Região ..................... lugares a visitar e tempos de viagem
+├── Galeria .................... fotografias da casa, da quinta e da região
 ├── Informações
-│   ├── Sobre nós ............ história da casa e da família Loureiro
-│   └── Perguntas frequentes . entrada e saída, animais, acessos, pagamento
-└── Reservar ................. pedido de reserva, contactos e mapa
+│   ├── Sobre nós .............. história da casa e da família Loureiro
+│   └── Perguntas frequentes ... reservas, estadia, atividades e como chegar
+└── Reservar ................... pedido de reserva e contactos
 ```
 
 ## Funcionalidades
-
+ 
 ### Básicas
-
-- Menu de navegação em todas as páginas, com o submenu Informações (Sobre nós e Perguntas frequentes) e botão de menu no telemóvel
+ 
+- Menu de navegação com o submenu Informações; no telemóvel ocupa o ecrã inteiro
 - Design responsivo para telemóvel, tablet e computador
-- Página inicial com vídeo de drone ou imagem da quinta em ecrã inteiro (o vídeo passa em loop, sem som e com botão para pausar), com o menu por cima e o nome da quinta em baixo; o botão Reservar leva à página de reserva
-- Slideshow de fotografias na página inicial, que passa sozinho e tem setas e pontos para navegar
-- Páginas da casa, da quinta, da região e Sobre nós com textos e fotografias
-- Perguntas frequentes em que cada resposta abre e fecha ao clicar na pergunta
-- Galeria com visualizador: ampliar, passar fotografias com as setas do teclado ou a deslizar no telemóvel
-- Formulário de pedido de reserva com validação (nome obrigatório, datas a partir de hoje, partida depois da chegada) que abre o email ou o WhatsApp com o pedido já escrito
-- Contactos com morada, telefone, email e ligação para o mapa
+- Página inicial com vídeo de drone ou imagem da quinta e slideshow de fotografias
+- Páginas da casa, da quinta, da região e Sobre nós
+- "O ano na quinta": atividades de cada época, como a apanha da uva, a pisa das uvas e a apanha da azeitona
+- Inscrição dos visitantes nas atividades
+- Galeria em que as fotografias se ampliam para mostrar os detalhes
+- Perguntas frequentes organizadas por categorias
+- Formulário de pedido de reserva com validação, enviado por email ou WhatsApp
+- Contactos e mapa
 
 ### Extras
-
-- "O ano na quinta": calendário interativo com o trabalho de cada mês e as horas de luz em Gouveia
+ 
 - Versão em inglês do website
 - Calendário de disponibilidade com as datas já ocupadas
-- Estimativa do preço da estadia conforme as datas e o número de hóspedes
+- Estimativa do preço da estadia
 - Mapa interativo com os lugares a visitar na região
-- Envio do pedido de reserva diretamente do site, sem abrir o programa de email do visitante
+- Formulário que guarda no website os dados das reservas e das inscrições
 
 ## Esquemas
 
@@ -81,11 +81,11 @@ No telemóvel, a página inicial aparece em três ecrãs (o topo, a parte seguin
 ![Página Reservar em computador](docs/mockups/reservar-desktop.png)
 
 ## Referências
-
+ 
 Websites que serviram de referência e o que se aproveitou de cada um.
-
+ 
 | Website | O que se aproveitou |
 |---|---|
-| [São Lourenço do Barrocal](https://barrocal.pt/) | Vídeo em ecrã inteiro na abertura da página inicial e menu organizado com submenus. |
-| [Craveiral Farmhouse](https://www.craveiral.pt/) | Abertura em ecrã inteiro com imagens a passar, botão Reservar destacado no topo e destaques com fotografia e ligação para cada página. |
-| [Quinta da Estrela](https://quintadaestrela.com/pt-pt/) | Página própria sobre a quinta e website em várias línguas, ideia para a versão em inglês. |
+| [São Lourenço do Barrocal](https://barrocal.pt/) | Vídeo em ecrã inteiro na abertura da página inicial. A página de atividades, em que cada atividade tem fotografia, título e uma frase, e o calendário de eventos ao longo do ano deram a ideia para "O ano na quinta". |
+| [Craveiral Farmhouse](https://www.craveiral.pt/) | Abertura da página inicial com uma imagem grande, botão Reservar destacado no topo e website em português e inglês, ideia para a versão em inglês. |
+| [Quinta da Estrela](https://quintadaestrela.com/pt-pt/) | Website de uma quinta de turismo rural da mesma região, a Serra da Estrela. |
