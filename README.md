@@ -20,12 +20,12 @@ O website serve para dar a conhecer a quinta: mostrar a casa, a região e as ati
 O website tem nove páginas. Seis estão no menu principal; Sobre nós e Perguntas frequentes ficam dentro do item Informações, e O ano na quinta abre a partir da página A Quinta.
 
 ```
-Menu: Início | A Casa | A Quinta | Região | Galeria | Informações | Reservar
+Menu: Início | A Casa | A Quinta | O ano na quinta | Região | Galeria | Informações | Reservar
 
 Início ......................... apresentação da quinta e destaques das páginas
 ├── A Casa ..................... espaços, comodidades e fotografias da casa
 ├── A Quinta ................... olival, vinha, pomar e nogueiral
-│   └── O ano na quinta ........ gráfico dos meses e atividades por época
+├── O ano na quinta ............ gráfico dos meses e atividades por época
 ├── Região ..................... lugares a visitar e tempos de viagem
 ├── Galeria .................... fotografias da casa, da quinta e da região
 ├── Informações
@@ -47,16 +47,34 @@ Início ......................... apresentação da quinta e destaques das pági
 - Inscrição nas atividades para quem tem reserva na quinta
 - Galeria em que as fotografias se ampliam para mostrar os detalhes
 - Perguntas frequentes organizadas por categorias
-- Formulário de pedido de reserva com validação, enviado por email ou WhatsApp
+- Formulário de pedido de reserva com validação básica; integração dos dados com email e WhatsApp prevista para uma entrega seguinte
 - Contactos e mapa
 
 ### Extras
+
+Os seguintes extras estão previstos, mas ainda não fazem parte desta entrega:
 
 - Versão em inglês do website
 - Calendário de disponibilidade com as datas já ocupadas
 - Estimativa do preço da estadia
 - Mapa interativo com os lugares a visitar na região
 - Formulário que guarda no website os dados das reservas e das inscrições
+
+## Estado do projeto
+
+### Implementado nesta entrega
+
+- Nove páginas em português, com navegação entre elas
+- Layout responsivo para telemóvel, tablet e computador
+- Vídeo de drone e slideshow na página inicial
+- Galeria com fotografias ampliadas
+- Gráfico anual com filtro de atividades por mês
+- Formulário de reserva com validação HTML e opções de atividades
+- Contactos, mapa e perguntas frequentes
+
+### Planeado
+
+Os extras listados acima e as funcionalidades descritas em [Próximos passos](#próximos-passos) ainda não estão implementados.
 
 ## Esquemas
 
@@ -81,6 +99,91 @@ No telemóvel, a página inicial aparece em três ecrãs (o topo, a parte seguin
 ### Reservar · Desktop
 
 ![Página Reservar em computador](docs/mockups/reservar-desktop.png)
+
+## Código
+
+Primeira entrega do código: só HTML e CSS, com design responsivo para telemóvel, tablet e computador. O JavaScript entra nas entregas seguintes.
+
+### Tecnologias
+
+- **HTML5** — estrutura e conteúdo das páginas.
+- **CSS3** — estilos, layout responsivo e interações desta entrega.
+- **JavaScript, backend e base de dados** — não são usados nesta versão.
+
+### Requisitos
+
+- Um navegador moderno.
+- A pasta completa do projeto, extraída do ZIP.
+
+Não é necessário instalar dependências, Node.js ou npm.
+
+Para ver o site, extraia o ZIP completo para uma pasta e abra `index.html` no navegador. Pode fazê-lo com duplo clique ou arrastando o ficheiro para uma janela do navegador. Não abra o ficheiro a partir da pré-visualização do ZIP: os restantes ficheiros do site podem não estar acessíveis.
+
+Se preferir usar o terminal, entre primeiro na pasta extraída. O comando depende do sistema operativo:
+
+**Windows (PowerShell):**
+
+```powershell
+Start-Process .\index.html
+```
+
+**Linux:**
+
+```bash
+xdg-open ./index.html
+```
+
+O site usa apenas HTML e CSS; não precisa de servidor, `localhost`, Node.js ou npm.
+
+### Pedido de reserva
+
+Nesta entrega, os campos do formulário têm validação HTML. O botão de email usa `mailto:`, que depende do programa de correio configurado no computador de quem visita o site; o site não confirma a entrega da mensagem. O botão de WhatsApp aponta para um número provisório, abre apenas uma conversa e ainda não inclui os dados preenchidos no formulário.
+
+Numa entrega seguinte, pretendemos usar JavaScript para ler as datas, o número de hóspedes, as atividades e os pacotes selecionados e preparar a mesma mensagem de reserva para email ou WhatsApp. A pessoa poderá rever e enviar essa mensagem na aplicação escolhida. Para enviar ou guardar reservas automaticamente, sem essa confirmação, será necessário um serviço ou servidor próprio.
+
+```
+quinta_santa_guilha/
+├── index.html                 Início
+├── casa.html                  A Casa
+├── quinta.html                A Quinta
+├── ano-na-quinta.html         O ano na quinta
+├── regiao.html                Região
+├── galeria.html               Galeria
+├── sobre-nos.html             Sobre nós
+├── perguntas-frequentes.html  Perguntas frequentes
+├── reservar.html              Reservar
+├── css/
+│   ├── base.css               cores, letra, botões e secções comuns
+│   ├── menu.css               cabeçalho e menu
+│   ├── rodape.css             rodapé
+│   └── (um ficheiro por página)
+├── fonts/
+├── images/
+└── videos/                    vídeo de drone da página inicial
+```
+
+Sem JavaScript, os elementos interativos foram feitos só com HTML e CSS:
+
+- Menu do telemóvel em ecrã inteiro: caixa de seleção escondida e o seletor `:checked`
+- Submenu Informações e respostas das perguntas frequentes: elemento `<details>`
+- Slideshow da página inicial: animação CSS e botões de opção para as setas e os pontos
+- Fotografias ampliadas na galeria: seletor `:target`
+- Filtro por mês em O ano na quinta: botões de opção e o seletor `:checked`
+- Janela de cada atividade e pacote extra, com fotografia e descrição: seletor `:target`
+- Atividades do formulário de reserva conforme o mês da estadia: seletor `:has()`
+- Validação do formulário de reserva: atributos `required` e `type="email"`
+
+## Próximos passos
+
+Numa fase seguinte, o projeto acrescenta JavaScript ao site que já existe, sem mudar a estrutura das páginas:
+
+- **Tempo na quinta e na serra:** mostrar a temperatura atual na quinta e na Torre, na Serra da Estrela, usando dados do [Open-Meteo](https://open-meteo.com/), que não requer chave de API.
+- **Tempos de viagem de carro:** apresentar na página Região o tempo de carro entre a quinta e cada lugar, calculado com o OSRM (OpenStreetMap).
+- **Como chegar de Coimbra, Lisboa e Porto:** permitir escolher a cidade de partida e o meio de transporte (carro, comboio ou autocarro), mostrando um tempo aproximado e o percurso no Google Maps. Como não há uma API aberta com os horários da CP e da Rede Expressos, os horários atualizados serão consultados no Google Maps.
+- **Mês da estadia automático:** preencher o mês no formulário a partir da data de chegada.
+- **Pedido de reserva por email ou WhatsApp:** preparar uma mensagem com as datas, o número de hóspedes, as atividades e os pacotes escolhidos, para a pessoa rever e enviar na aplicação escolhida.
+
+Mais tarde, poderão ser desenvolvidos os extras listados acima. O calendário de disponibilidade, o cálculo do preço e o armazenamento das reservas vão precisar de um serviço ou servidor próprio.
 
 ## Referências
 
