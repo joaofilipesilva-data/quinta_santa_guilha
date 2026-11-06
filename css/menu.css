@@ -1,0 +1,313 @@
+/* No telemóvel, o menu ocupa o ecrã; em ecrãs maiores, fica na horizontal. */
+
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: var(--creme);
+  border-bottom: 1px solid var(--linha);
+  color: var(--texto);
+}
+
+/* Na página inicial, o cabeçalho fica sobre a imagem. */
+.cabecalho--sobre-imagem {
+  position: absolute;
+  inset: 0 0 auto;
+  background: linear-gradient(rgba(15, 25, 20, 0.55), rgba(15, 25, 20, 0));
+  border-bottom: 0;
+  color: var(--branco);
+}
+
+.cabecalho__barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: var(--cabecalho);
+}
+
+.marca {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: inherit;
+  font-family: var(--letra-titulos);
+  font-size: 1.2rem;
+  line-height: 1.1;
+  text-decoration: none;
+}
+
+.marca:hover {
+  color: inherit;
+}
+
+.marca img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+/* Este checkbox controla a abertura do menu. */
+.menu-abrir {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.menu-botao {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-content: center;
+  gap: 6px;
+  width: 48px;
+  height: 48px;
+  margin-right: -0.5rem;
+  border-radius: var(--raio);
+  cursor: pointer;
+}
+
+.menu-botao span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background-color: currentColor;
+  transition: transform 0.25s, opacity 0.2s;
+}
+
+.menu-abrir:focus-visible ~ .menu-botao {
+  outline: 3px solid var(--palha);
+}
+
+/* O ícone transforma-se num X quando o menu está aberto. */
+.menu-abrir:checked ~ .menu-botao span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-abrir:checked ~ .menu-botao span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-abrir:checked ~ .menu-botao span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.menu-abrir:checked ~ .marca,
+.menu-abrir:checked ~ .menu-botao {
+  color: var(--texto);
+}
+
+/* Em telemóveis e tablets, o menu ocupa o ecrã todo. */
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: calc(var(--cabecalho) + 1.5rem) 1.5rem 2rem;
+  overflow-y: auto;
+  background-color: var(--creme);
+  color: var(--texto);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-0.75rem);
+  transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
+}
+
+.menu-abrir:checked ~ .menu {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+}
+
+.menu__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu__lista a,
+.menu__sub summary {
+  display: block;
+  padding: 0.35rem 0;
+  color: inherit;
+  font-family: var(--letra-titulos);
+  font-size: 1.9rem;
+  text-decoration: none;
+}
+
+.menu__lista a:hover,
+.menu__sub summary:hover {
+  color: var(--palha);
+}
+
+.menu__lista a[aria-current="page"],
+.menu__lista .ativo {
+  color: var(--palha);
+}
+
+/* Submenu de Informações */
+.menu__sub summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.menu__sub--quinta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.menu__sub--quinta > a {
+  display: inline-block;
+}
+
+.menu__sub--quinta > details[open] {
+  flex-basis: 100%;
+}
+
+.menu__sub--quinta > details > summary {
+  padding-inline: 0.35rem;
+}
+
+.menu__sub summary::-webkit-details-marker {
+  display: none;
+}
+
+.menu__sub summary::after {
+  content: "▾";
+  margin-left: 0.4rem;
+  font-size: 0.6em;
+  vertical-align: middle;
+}
+
+.menu__sub details[open] summary::after {
+  content: "▴";
+}
+
+.menu__sub ul {
+  margin: 0.25rem 0 0.5rem 0.25rem;
+  padding: 0 0 0 1.25rem;
+  border-left: 2px solid var(--linha);
+  list-style: none;
+}
+
+.menu__sub ul a {
+  font-family: var(--letra);
+  font-size: 1.15rem;
+}
+
+.menu__reservar {
+  width: 100%;
+}
+
+/* Evita que a página role enquanto o menu está aberto. */
+@media (max-width: 959px) {
+  body:has(.menu-abrir:checked) {
+    overflow: hidden;
+  }
+}
+
+/* Em ecrãs maiores, o menu passa para a horizontal. */
+@media (min-width: 960px) {
+  .menu-botao {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    padding: 0;
+    overflow: visible;
+    background: none;
+    color: inherit;
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .menu__lista {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.6rem;
+  }
+
+  .menu__lista a,
+  .menu__sub summary {
+    padding: 0.5rem 0;
+    font-family: var(--letra);
+    font-size: 0.98rem;
+    font-weight: 500;
+  }
+
+  .cabecalho--sobre-imagem .menu__lista a:hover,
+  .cabecalho--sobre-imagem .menu__sub summary:hover {
+    color: var(--pedra);
+  }
+
+  .cabecalho--sobre-imagem .menu__lista a[aria-current="page"] {
+    color: var(--branco);
+    text-decoration: underline;
+    text-underline-offset: 0.5em;
+  }
+
+  .menu__sub {
+    position: relative;
+  }
+
+  .menu__sub--quinta > details[open] {
+    flex-basis: auto;
+  }
+
+  .menu__sub ul {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: -1rem;
+    min-width: 230px;
+    margin: 0;
+    padding: 0.5rem;
+    border: 1px solid var(--linha);
+    border-radius: var(--raio);
+    background-color: var(--branco);
+    box-shadow: var(--sombra);
+    color: var(--texto);
+  }
+
+  .menu__sub ul a {
+    padding: 0.55rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+  }
+
+  .menu__sub ul a:hover {
+    background-color: var(--pedra);
+    color: var(--texto);
+  }
+
+  .menu__reservar {
+    width: auto;
+    min-height: 42px;
+    padding: 0.5rem 1.3rem;
+  }
+
+  .cabecalho--sobre-imagem .menu__reservar {
+    background-color: var(--branco);
+    border-color: var(--branco);
+    color: var(--verde);
+  }
+
+  .cabecalho--sobre-imagem .menu__reservar:hover {
+    background-color: var(--pedra);
+    border-color: var(--pedra);
+  }
+}

@@ -1,0 +1,415 @@
+/* Estilos partilhados pelo site */
+
+/* As fontes locais evitam pedidos a serviços externos. */
+@font-face {
+  font-family: "Figtree";
+  src: url("../fonts/figtree-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("../fonts/figtree-latin-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("../fonts/figtree-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Marcellus";
+  src: url("../fonts/marcellus-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Cores e medidas usadas em várias páginas. */
+:root {
+  --verde: #1f3b32;
+  --verde-escuro: #152a23;
+  --verde-claro: #e2eae4;
+  --creme: #f2f5f2;
+  --pedra: #e6ebe5;
+  --linha: #dbd2c3;
+  --texto: #2a2622;
+  --suave: #665f57;
+  --branco: #ffffff;
+  --palha: #76521c;
+
+  --letra: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --letra-titulos: "Marcellus", Georgia, "Times New Roman", serif;
+
+  --largura: 1180px;
+  --cabecalho: 72px;
+  --raio: 6px;
+  --sombra: 0 10px 30px rgba(21, 42, 35, 0.12);
+}
+
+/* Estilos base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--letra);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--texto);
+  background-color: var(--creme);
+}
+
+img,
+video,
+iframe {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 0.5em;
+  font-family: var(--letra-titulos);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--verde-escuro);
+}
+
+h1 {
+  font-size: clamp(2.3rem, 6vw, 3.6rem);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--verde);
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--palha);
+  outline-offset: 3px;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.92rem;
+  color: var(--suave);
+}
+
+address {
+  font-style: normal;
+}
+
+/* Elementos auxiliares */
+.contentor {
+  width: min(100% - 2.5rem, var(--largura));
+  margin-inline: auto;
+}
+
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.saltar {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--verde);
+  color: var(--branco);
+  border-radius: var(--raio);
+}
+
+.saltar:focus {
+  top: 1rem;
+  color: var(--branco);
+}
+
+/* Botões e ligações em destaque */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.7rem 1.6rem;
+  border: 2px solid var(--verde);
+  border-radius: var(--raio);
+  background-color: var(--verde);
+  color: var(--branco);
+  font-family: var(--letra);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.botao:hover {
+  background-color: var(--verde-escuro);
+  border-color: var(--verde-escuro);
+  color: var(--branco);
+}
+
+.botao--contorno {
+  background-color: transparent;
+  color: var(--verde);
+}
+
+.botao--contorno:hover {
+  background-color: var(--verde-claro);
+  border-color: var(--verde);
+  color: var(--verde);
+}
+
+.botao--claro {
+  background-color: var(--branco);
+  border-color: var(--branco);
+  color: var(--verde);
+}
+
+.botao--claro:hover {
+  background-color: var(--pedra);
+  border-color: var(--pedra);
+  color: var(--verde-escuro);
+}
+
+/* Secções de conteúdo */
+.seccao {
+  padding-block: clamp(3.5rem, 8vw, 6rem);
+}
+
+.seccao--pedra {
+  background-color: var(--pedra);
+}
+
+.etiqueta {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--palha);
+}
+
+.introducao {
+  max-width: 62ch;
+  font-size: 1.15rem;
+  color: var(--suave);
+}
+
+/* Título e introdução das páginas interiores. */
+.pagina-topo {
+  padding-block: 2rem clamp(2rem, 5vw, 3.5rem);
+  border-bottom: 1px solid var(--linha);
+}
+
+.migalhas ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9rem;
+  color: var(--suave);
+}
+
+.migalhas li + li::before {
+  content: "›";
+  margin-right: 0.4rem;
+}
+
+.migalhas a {
+  color: var(--suave);
+}
+
+/* Texto e imagem lado a lado; em ecrãs pequenos, ficam empilhados. */
+.bloco {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.bloco__imagem img {
+  width: 100%;
+  border-radius: var(--raio);
+}
+
+.bloco + .bloco {
+  margin-top: clamp(3rem, 7vw, 5rem);
+}
+
+/* Lista com marcadores discretos */
+.lista {
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.lista li {
+  position: relative;
+  padding: 0.55rem 0 0.55rem 1.5rem;
+  border-bottom: 1px solid var(--linha);
+}
+
+.lista li::before {
+  content: "";
+  position: absolute;
+  top: 1.15rem;
+  left: 0.2rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background-color: var(--palha);
+}
+
+/* Cartões que levam a outras páginas */
+.cartoes {
+  display: grid;
+  gap: 1.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cartao {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--branco);
+  border-radius: var(--raio);
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.cartao img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.cartao__texto {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.cartao__texto p {
+  color: var(--suave);
+}
+
+.cartao__ligacao {
+  margin-top: auto;
+  font-weight: 600;
+}
+
+/* Convite para reservar no fim da página */
+.chamada {
+  padding-block: clamp(3rem, 7vw, 4.5rem);
+  background-color: var(--verde);
+  color: var(--branco);
+  text-align: center;
+}
+
+.chamada h2 {
+  color: var(--branco);
+}
+
+.chamada p {
+  max-width: 46ch;
+  margin-inline: auto;
+  margin-bottom: 1.75rem;
+  opacity: 0.9;
+}
+
+/* Ajustes para ecrãs a partir de 600px */
+@media (min-width: 600px) {
+  .cartoes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Ajustes para ecrãs a partir de 960px */
+@media (min-width: 960px) {
+  .bloco {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .bloco--invertido .bloco__imagem {
+    order: -1;
+  }
+
+  .pagina-topo {
+    padding-top: 3rem;
+  }
+}
+
+/* Respeita a preferência do utilizador por menos movimento. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
