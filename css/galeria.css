@@ -1,0 +1,82 @@
+/* Grelha de miniaturas. Cada miniatura é uma ligação para a fotografia grande. */
+
+.grelha {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.grelha a {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 4px;
+  background-color: var(--pedra);
+}
+
+.grelha img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.grelha a:hover img,
+.grelha a:focus-visible img {
+  transform: scale(1.05);
+}
+
+/* Lupa ao passar o rato sobre uma fotografia */
+.grelha a::after {
+  content: "+";
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.6rem;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--verde);
+  font-size: 1.3rem;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.grelha a:hover::after,
+.grelha a:focus-visible::after {
+  opacity: 1;
+}
+
+@media (min-width: 600px) {
+  .grelha {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.9rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .grelha {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Em ecrãs grandes, a primeira fotografia ganha mais destaque. */
+  .grelha li:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .grelha li:first-child a,
+  .grelha li:first-child img {
+    height: 100%;
+  }
+
+  .grelha li:first-child img {
+    aspect-ratio: auto;
+  }
+}
