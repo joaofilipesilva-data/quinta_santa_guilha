@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quinta de Santa Guilha | Turismo rural em Gouveia, Serra da Estrela</title>
+  <meta name="description" content="Casa de granito com cinco hectares de olival, vinha, pomar e nogueiral em Gouveia, na encosta da Serra da Estrela.">
+  <link rel="icon" href="images/logo-96.png" type="image/png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/rodape.css">
+  <link rel="stylesheet" href="css/inicio.css">
+</head>
+<body>
+  <a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
+
+  <header class="cabecalho cabecalho--sobre-imagem">
+    <div class="cabecalho__barra contentor">
+      <input type="checkbox" id="menu-abrir" class="menu-abrir" aria-label="Abrir o menu">
+      <a class="marca" href="index.html">
+        <img src="images/logo-96.png" alt="" width="44" height="44">
+        <span>Quinta de Santa Guilha</span>
+      </a>
+      <label for="menu-abrir" class="menu-botao">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu__lista">
+          <li><a href="index.html" aria-current="page">Início</a></li>
+          <li><a href="casa.html">A Casa</a></li>
+          <li><a href="quinta.html">A Quinta</a></li>
+          <li><a href="ano-na-quinta.html">O ano na quinta</a></li>
+          <li><a href="regiao.html">Região</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+          <li class="menu__sub">
+            <details>
+              <summary>Informações</summary>
+              <ul>
+                <li><a href="sobre-nos.html">Sobre nós</a></li>
+                <li><a href="perguntas-frequentes.html">Perguntas frequentes</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+        <a class="botao menu__reservar" href="reservar.html">Reservar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="capa" aria-labelledby="titulo-capa">
+      <video class="capa__imagem" autoplay muted loop playsinline preload="metadata" poster="images/capa-drone.jpg" aria-hidden="true">
+        <source src="videos/drone-quinta.mp4" type="video/mp4" media="(min-width: 960px)">
+        <source src="videos/drone-quinta-telemovel.mp4" type="video/mp4">
+      </video>
+      <div class="capa__conteudo contentor">
+        <h1 id="titulo-capa"><span class="capa__antes">Quinta de</span> Santa Guilha</h1>
+        <p>Casa de granito e cinco hectares de olival, vinha e pomar em Gouveia, na encosta da Serra da Estrela.</p>
+        <a class="botao botao--claro" href="reservar.html">Reservar</a>
+      </div>
+    </section>
+
+    <section class="seccao apresentacao" aria-labelledby="titulo-apresentacao">
+      <div class="contentor bloco">
+        <div>
+          <span class="etiqueta">Gouveia · Serra da Estrela</span>
+          <h2 id="titulo-apresentacao">Uma casa de granito na encosta de Gouveia</h2>
+          <p>A Quinta de Santa Guilha fica na vertente noroeste da Serra da Estrela, com vista aberta sobre o vale do Mondego. São cinco hectares de olival, vinha, pomar e nogueiral à volta de uma casa tradicional de granito.</p>
+          <p>Foi a casa de três gerações da família Loureiro. Foi remodelada com cuidado para receber quem quer passar uns dias no campo, com a serra à porta.</p>
+          <a class="botao botao--contorno" href="sobre-nos.html">A nossa história</a>
+        </div>
+        <figure class="bloco__imagem apresentacao__imagem">
+          <img src="images/porta-verde.jpg" alt="Porta verde da casa com alpendre de madeira e telha, entre paredes de granito" width="1200" height="1600" loading="lazy">
+          <figcaption>A porta de entrada para a tua estadia.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="seccao seccao--pedra seccao--fim-amplo" aria-labelledby="titulo-imagens">
+      <div class="contentor">
+        <h2 id="titulo-imagens">A quinta em imagens</h2>
+        <div class="slides">
+          <img id="slide-imagem" src="images/fachada-vale.jpg" alt="Fachada de granito ao fim da tarde, com o vale ao fundo" width="1600" height="1200">
+          <p id="slide-legenda" class="slides__legenda">A casa ao fim da tarde, virada para o vale.</p>
+          <button type="button" id="slide-anterior" class="slides__seta slides__seta--anterior" aria-label="Fotografia anterior">‹</button>
+          <button type="button" id="slide-seguinte" class="slides__seta slides__seta--seguinte" aria-label="Fotografia seguinte">›</button>
+        </div>
+        <p id="slide-numero" class="slides__numero">1 / 5</p>
+      </div>
+    </section>
+
+    <section class="seccao seccao--fim-amplo destaques" aria-labelledby="titulo-destaques">
+      <div class="contentor">
+        <div class="destaques__cabeca">
+          <h2 id="titulo-destaques">Descubra a quinta</h2>
+          <p class="introducao">A casa, a terra à volta e o que há para ver na região.</p>
+        </div>
+        <ul class="cartoes">
+          <li class="cartao">
+            <img src="images/thumbs/sala-lareira.jpg" alt="Sala da casa com lareira de granito" width="900" height="675" loading="lazy">
+            <div class="cartao__texto">
+              <h3>A Casa</h3>
+              <p>Paredes de pedra, sala com lareira, cozinha equipada e pátio de lajes.</p>
+              <a class="cartao__ligacao" href="casa.html">Ver a casa</a>
+            </div>
+          </li>
+          <li class="cartao">
+            <img src="images/thumbs/aerea-quinta.jpg" alt="Vista aérea da quinta com a casa, a vinha e o olival" width="900" height="675" loading="lazy">
+            <div class="cartao__texto">
+              <h3>A Quinta</h3>
+              <p>Cinco hectares de olival, vinha, pomar e nogueiral à volta da casa.</p>
+              <a class="cartao__ligacao" href="quinta.html">Ver a quinta</a>
+            </div>
+          </li>
+          <li class="cartao">
+            <img src="images/thumbs/chegada-entardecer.jpg" alt="Pátio da quinta ao entardecer, com a figueira" width="900" height="675" loading="lazy">
+            <div class="cartao__texto">
+              <h3>O ano na quinta</h3>
+              <p>O trabalho de cada mês e as atividades em que pode participar: a vindima, a pisa das uvas e a apanha da azeitona.</p>
+              <a class="cartao__ligacao" href="ano-na-quinta.html">Ver as atividades</a>
+            </div>
+          </li>
+          <li class="cartao">
+            <img src="images/thumbs/por-do-sol.jpg" alt="Pôr do sol sobre o vale, visto da quinta" width="900" height="675" loading="lazy">
+            <div class="cartao__texto">
+              <h3>Região</h3>
+              <p>Aldeias de granito, lagoas da serra e a Torre, a uma hora de carro.</p>
+              <a class="cartao__ligacao" href="regiao.html">Ver a região</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chamada" aria-labelledby="titulo-chamada">
+      <div class="contentor">
+        <h2 id="titulo-chamada">Venha passar uns dias na quinta</h2>
+        <p>Diga-nos as datas e quantas pessoas vêm. Respondemos com a disponibilidade e o preço da estadia.</p>
+        <a class="botao botao--claro" href="reservar.html">Reservar</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape__grelha contentor">
+      <div>
+        <a class="marca" href="index.html">
+          <img src="images/logo-96.png" alt="" width="44" height="44">
+          <span>Quinta de Santa Guilha</span>
+        </a>
+        <p class="rodape__frase">Turismo rural em Gouveia, na encosta da Serra da Estrela.</p>
+      </div>
+      <nav aria-label="Páginas do site">
+        <h2 class="rodape__titulo">A quinta</h2>
+        <ul class="rodape__ligacoes">
+          <li><a href="casa.html">A Casa</a></li>
+          <li><a href="quinta.html">A Quinta</a></li>
+          <li><a href="ano-na-quinta.html">O ano na quinta</a></li>
+          <li><a href="regiao.html">Região</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Informações">
+        <h2 class="rodape__titulo">Informações</h2>
+        <ul class="rodape__ligacoes">
+          <li><a href="sobre-nos.html">Sobre nós</a></li>
+          <li><a href="perguntas-frequentes.html">Perguntas frequentes</a></li>
+          <li><a href="reservar.html">Reservar</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="rodape__titulo">Contactos</h2>
+        <address>
+          Quinta de Santa Guilha<br>
+          6290-329 Gouveia, Guarda<br>
+          <a href="tel:+351900000000">+351 900 000 000</a><br>
+          <a href="mailto:reservasquintadesantaguilha@gmail.com">reservasquintadesantaguilha@gmail.com</a>
+        </address>
+      </div>
+    </div>
+    <div class="rodape__fim contentor">
+      <p>&copy; 2026 Quinta de Santa Guilha · Alojamento Local n.º 000000/AL</p>
+      <a href="https://www.livroreclamacoes.pt/">Livro de Reclamações</a>
+    </div>
+  </footer>
+
+  <script src="js/slides.js"></script>
+</body>
+</html>

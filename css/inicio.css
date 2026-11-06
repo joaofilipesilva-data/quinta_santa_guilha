@@ -1,0 +1,177 @@
+/* Conteúdo da página inicial */
+
+/* Imagem de abertura */
+.capa {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  min-height: 100vh;
+  min-height: 100svh;
+  color: var(--branco);
+}
+
+.capa__imagem {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: capa-zoom 24s ease-in-out infinite alternate;
+}
+
+@keyframes capa-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.12); }
+}
+
+.capa::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to top, rgba(15, 25, 20, 0.78) 0%, rgba(15, 25, 20, 0.2) 55%, rgba(15, 25, 20, 0.3) 100%);
+}
+
+.capa__conteudo {
+  padding-block: calc(var(--cabecalho) + 2rem) clamp(3rem, 10vh, 6rem);
+}
+
+.capa h1 {
+  margin-bottom: 0.35em;
+  color: var(--branco);
+  font-size: clamp(3rem, 11vw, 6.5rem);
+  line-height: 1;
+}
+
+.capa__antes {
+  display: block;
+  margin-bottom: 0.15em;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+}
+
+.capa p {
+  max-width: 34rem;
+  font-size: 1.15rem;
+}
+
+.capa .botao {
+  margin-top: 0.5rem;
+}
+
+/* A apresentação ocupa pelo menos a altura do ecrã, depois da capa. */
+.apresentacao {
+  display: grid;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-bottom: clamp(5rem, 10vw, 8rem);
+}
+
+.apresentacao__imagem img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.seccao--fim-amplo {
+  padding-bottom: clamp(5rem, 10vw, 8rem);
+}
+
+/* Slideshow: o JavaScript (js/slides.js) troca a imagem e a legenda. */
+.slides {
+  position: relative;
+  margin-top: 2rem;
+  overflow: hidden;
+  border-radius: var(--raio);
+  background-color: var(--pedra);
+}
+
+.slides img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.slides__legenda {
+  margin: 0;
+  padding: 1rem 1.25rem;
+  background-color: var(--verde-escuro);
+  color: var(--branco);
+  font-size: 0.95rem;
+}
+
+.slides__seta {
+  position: absolute;
+  top: 40%;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--verde);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.slides__seta:hover {
+  background-color: var(--branco);
+}
+
+.slides__seta--anterior {
+  left: 0.75rem;
+}
+
+.slides__seta--seguinte {
+  right: 0.75rem;
+}
+
+.slides__numero {
+  margin-top: 0.75rem;
+  text-align: center;
+  color: var(--suave);
+}
+
+/* Cartões para explorar o resto do site */
+.destaques__cabeca {
+  max-width: 40rem;
+  margin-bottom: 2.25rem;
+}
+
+/* Ajustes para ecrãs a partir de 600px */
+@media (min-width: 600px) {
+  .slides img {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* Ajustes para ecrãs a partir de 960px */
+@media (min-width: 960px) {
+  .capa__conteudo {
+    padding-bottom: 5.5rem;
+  }
+
+  .apresentacao {
+    padding-bottom: 12rem;
+  }
+
+  .destaques .cartoes {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+video.capa__imagem {
+  animation: none;
+}
+
+/* Quem prefere menos movimento vê uma fotografia em vez do vídeo. */
+@media (prefers-reduced-motion: reduce) {
+  video.capa__imagem {
+    display: none;
+  }
+
+  .capa {
+    background: url("../images/aerea-casa.jpg") center / cover;
+  }
+}
