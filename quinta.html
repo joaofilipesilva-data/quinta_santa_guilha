@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Quinta | Quinta de Santa Guilha</title>
+  <meta name="description" content="Cinco hectares de olival, vinha, pomar e nogueiral à volta da casa, em Gouveia.">
+  <link rel="icon" href="images/logo-96.png" type="image/png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/rodape.css">
+  <link rel="stylesheet" href="css/quinta.css">
+</head>
+<body>
+  <a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
+
+  <header class="cabecalho">
+    <div class="cabecalho__barra contentor">
+      <input type="checkbox" id="menu-abrir" class="menu-abrir" aria-label="Abrir o menu">
+      <a class="marca" href="index.html">
+        <img src="images/logo-96.png" alt="" width="44" height="44">
+        <span>Quinta de Santa Guilha</span>
+      </a>
+      <label for="menu-abrir" class="menu-botao">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu__lista">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="casa.html">A Casa</a></li>
+          <li><a href="quinta.html" aria-current="page">A Quinta</a></li>
+          <li><a href="ano-na-quinta.html">O ano na quinta</a></li>
+          <li><a href="regiao.html">Região</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+          <li class="menu__sub">
+            <details>
+              <summary>Informações</summary>
+              <ul>
+                <li><a href="sobre-nos.html">Sobre nós</a></li>
+                <li><a href="perguntas-frequentes.html">Perguntas frequentes</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+        <a class="botao menu__reservar" href="reservar.html">Reservar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <div class="pagina-topo">
+      <div class="contentor">
+        <nav class="migalhas" aria-label="Está aqui">
+          <ol>
+            <li><a href="index.html">Início</a></li>
+            <li aria-current="page">A Quinta</li>
+          </ol>
+        </nav>
+        <h1>A Quinta</h1>
+        <p class="introducao">Cinco hectares de terra trabalhada há três gerações, à volta da casa.</p>
+      </div>
+    </div>
+
+    <section class="seccao" aria-labelledby="titulo-terra">
+      <div class="contentor">
+        <div class="bloco">
+          <div>
+            <h2 id="titulo-terra">Cinco hectares de terra</h2>
+            <p>À volta da casa há olival, vinha, pomar e um nogueiral plantado para dar madeira nobre. Junto ao pátio crescem figueiras, e as árvores de fruto vão dando colheita ao longo do ano.</p>
+            <p>É uma quinta trabalhada há três gerações, com espaço para passear entre as árvores, provar a fruta da época e ver o sol pôr-se sobre o vale.</p>
+          </div>
+          <figure class="bloco__imagem">
+            <img src="images/thumbs/aerea-quinta.jpg" alt="Vista aérea da quinta com a casa, o pátio de entrada, a vinha e o olival" width="900" height="506" loading="lazy">
+          </figure>
+        </div>
+        <ul class="culturas">
+          <li class="cultura">
+            <span class="cultura__epoca">Apanha em novembro</span>
+            <h3>Olival</h3>
+            <p>As oliveiras mais antigas da quinta. A azeitona segue para o lagar e volta em azeite novo.</p>
+          </li>
+          <li class="cultura">
+            <span class="cultura__epoca">Vindima em setembro</span>
+            <h3>Vinha</h3>
+            <p>Videiras plantadas em socalcos na encosta, viradas para o sol da tarde.</p>
+          </li>
+          <li class="cultura">
+            <span class="cultura__epoca">Fruta de junho a agosto</span>
+            <h3>Pomar</h3>
+            <p>Cerejeiras, macieiras e figueiras que dão fruta ao longo do verão.</p>
+          </li>
+          <li class="cultura">
+            <span class="cultura__epoca">Apanha em outubro</span>
+            <h3>Nogueiral</h3>
+            <p>Nogueiras plantadas para dar madeira nobre e, todos os outonos, nozes.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="seccao" aria-labelledby="titulo-ano">
+      <div class="contentor">
+        <div class="quinta__ano">
+          <img src="images/thumbs/chegada-entardecer.jpg" alt="Pátio da quinta ao entardecer, com a casa e a figueira" width="900" height="675" loading="lazy">
+          <div class="quinta__ano-texto">
+            <span class="etiqueta">Atividades</span>
+            <h2 id="titulo-ano">O ano na quinta</h2>
+            <p>Cada mês tem um trabalho diferente na terra. Quem fica na quinta pode participar na apanha da uva, na pisa das uvas, na apanha da azeitona e noutras atividades de cada época.</p>
+            <a class="botao botao--claro" href="ano-na-quinta.html">Ver o ano na quinta</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccao seccao--pedra" aria-labelledby="titulo-vista">
+      <div class="contentor">
+        <h2 id="titulo-vista">Vista de cima</h2>
+        <figure class="quinta__imagem-larga">
+          <video src="videos/passeio-quinta.mp4" poster="images/passeio-quinta.jpg" width="1024" height="576" autoplay muted loop playsinline controls preload="metadata" aria-label="Vídeo de drone à volta da casa, da piscina e dos terrenos da quinta ao fim da tarde"></video>
+          <figcaption>Uma volta de drone à casa, à piscina e aos terrenos, ao fim da tarde.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="chamada" aria-labelledby="titulo-chamada">
+      <div class="contentor">
+        <h2 id="titulo-chamada">Venha passar uns dias na quinta</h2>
+        <p>Diga-nos as datas e quantas pessoas vêm. Respondemos com a disponibilidade e o preço da estadia.</p>
+        <a class="botao botao--claro" href="reservar.html">Reservar</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape__grelha contentor">
+      <div>
+        <a class="marca" href="index.html">
+          <img src="images/logo-96.png" alt="" width="44" height="44">
+          <span>Quinta de Santa Guilha</span>
+        </a>
+        <p class="rodape__frase">Turismo rural em Gouveia, na encosta da Serra da Estrela.</p>
+      </div>
+      <nav aria-label="Páginas do site">
+        <h2 class="rodape__titulo">A quinta</h2>
+        <ul class="rodape__ligacoes">
+          <li><a href="casa.html">A Casa</a></li>
+          <li><a href="quinta.html">A Quinta</a></li>
+          <li><a href="ano-na-quinta.html">O ano na quinta</a></li>
+          <li><a href="regiao.html">Região</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Informações">
+        <h2 class="rodape__titulo">Informações</h2>
+        <ul class="rodape__ligacoes">
+          <li><a href="sobre-nos.html">Sobre nós</a></li>
+          <li><a href="perguntas-frequentes.html">Perguntas frequentes</a></li>
+          <li><a href="reservar.html">Reservar</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="rodape__titulo">Contactos</h2>
+        <address>
+          Quinta de Santa Guilha<br>
+          6290-329 Gouveia, Guarda<br>
+          <a href="tel:+351900000000">+351 900 000 000</a><br>
+          <a href="mailto:reservasquintadesantaguilha@gmail.com">reservasquintadesantaguilha@gmail.com</a>
+        </address>
+      </div>
+    </div>
+    <div class="rodape__fim contentor">
+      <p>&copy; 2026 Quinta de Santa Guilha · Alojamento Local n.º 000000/AL</p>
+      <a href="https://www.livroreclamacoes.pt/">Livro de Reclamações</a>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,99 @@
+/* Conteúdo da página da quinta */
+
+.quinta__imagem-larga img,
+.quinta__imagem-larga video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--raio);
+  background-color: var(--pedra);
+  object-fit: cover;
+}
+
+/* As quatro culturas da quinta */
+.culturas {
+  display: grid;
+  gap: 1.25rem;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cultura {
+  padding: 1.5rem;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background-color: var(--branco);
+}
+
+.cultura h3 {
+  margin-bottom: 0.35rem;
+}
+
+.cultura p {
+  margin: 0;
+  color: var(--suave);
+}
+
+.cultura__epoca {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--verde);
+}
+
+/* Ligação para «O ano na quinta» */
+.quinta__ano {
+  display: grid;
+  overflow: hidden;
+  border-radius: var(--raio);
+  background-color: var(--verde);
+  color: var(--branco);
+}
+
+.quinta__ano img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.quinta__ano-texto {
+  padding: clamp(1.75rem, 5vw, 3rem);
+}
+
+.quinta__ano h2 {
+  color: var(--branco);
+}
+
+.quinta__ano .etiqueta {
+  color: var(--pedra);
+}
+
+.quinta__ano p {
+  opacity: 0.9;
+}
+
+@media (min-width: 600px) {
+  .culturas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .culturas {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .quinta__ano {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .quinta__ano img {
+    aspect-ratio: auto;
+    min-height: 100%;
+  }
+}
