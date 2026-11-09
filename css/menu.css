@@ -209,14 +209,16 @@
 }
 
 /* Evita que a página role enquanto o menu está aberto. */
-@media (max-width: 959px) {
+@media (max-width: 1199px) {
   body:has(.menu-abrir:checked) {
     overflow: hidden;
   }
 }
 
-/* Em ecrãs maiores, o menu passa para a horizontal. */
-@media (min-width: 960px) {
+/* Em ecrãs largos, o menu passa para a horizontal.
+   Abaixo dos 1200px os oito itens já não cabem numa linha,
+   por isso o menu continua a abrir pelo botão. */
+@media (min-width: 1200px) {
   .menu-botao {
     display: none;
   }
@@ -244,6 +246,7 @@
 
   .menu__lista a,
   .menu__sub summary {
+    white-space: nowrap;
     padding: 0.5rem 0;
     font-family: var(--letra);
     font-size: 0.98rem;
@@ -296,6 +299,7 @@
 
   .menu__reservar {
     width: auto;
+    white-space: nowrap;
     min-height: 42px;
     padding: 0.5rem 1.3rem;
   }
