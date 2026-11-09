@@ -198,5 +198,5 @@ Websites que serviram de referência e o que se aproveitou de cada um.
 | Website | O que se aproveitou |
 |---|---|
 | [São Lourenço do Barrocal](https://barrocal.pt/) | Vídeo em ecrã inteiro na abertura da página inicial. A página de atividades, em que cada atividade tem fotografia, título e uma frase, e o calendário de eventos ao longo do ano deram a ideia para "O ano na quinta". |
-| [Craveiral Farmhouse](https://www.craveiral.pt/) | Abertura da página inicial com uma imagem grande, botão Reservar destacado no topo e website em português e inglês, ideia para a versão em inglês. |
+| [Craveiral Farmhouse](https://www.craveiral.pt/) | Abertura da página inicial com uma imagem grande, botão Reservar destacado no topo. |
 | [Quinta da Estrela](https://quintadaestrela.com/pt-pt/) | Website de uma quinta de turismo rural da mesma região, a Serra da Estrela. |
