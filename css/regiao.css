@@ -1,0 +1,135 @@
+/* Conteúdo da página da região */
+
+/* Lugares próximos e tempos de viagem */
+.lugares {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--linha);
+}
+
+.lugar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--linha);
+}
+
+.lugar h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.lugar p {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--suave);
+}
+
+.lugar__trajeto {
+  grid-column: 2;
+  display: inline-block;
+  min-width: 6rem;
+  color: var(--verde);
+  text-align: center;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.lugar__trajeto:hover,
+.lugar__trajeto:focus-visible {
+  color: var(--verde);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.lugar__trajeto:focus-visible {
+  outline: 2px solid var(--verde);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.lugar__tempo {
+  grid-column: 3;
+  grid-row: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background-color: var(--verde-claro);
+  color: var(--verde);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  justify-self: center;
+}
+
+.regiao__nota {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--suave);
+}
+
+/* Produtos da região */
+.sabores {
+  display: grid;
+  gap: 1.25rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sabores li {
+  padding: 1.5rem;
+  border-radius: var(--raio);
+  background-color: var(--branco);
+}
+
+.sabores h3 {
+  margin-bottom: 0.35rem;
+}
+
+.sabores p {
+  margin: 0;
+  color: var(--suave);
+}
+
+.regiao__imagem img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--raio);
+  object-fit: cover;
+}
+
+@media (min-width: 600px) {
+  .lugar {
+    grid-template-columns: 14rem minmax(0, 1fr) auto auto;
+  }
+
+  .lugar p {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .lugar__trajeto {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: center;
+  }
+
+  .lugar__tempo {
+    grid-column: 4;
+    grid-row: 1;
+    justify-self: center;
+  }
+
+  .sabores {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
