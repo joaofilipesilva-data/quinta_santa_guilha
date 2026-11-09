@@ -1,0 +1,114 @@
+/* As respostas abrem e fecham com o elemento <details> */
+
+.perguntas {
+  display: grid;
+  gap: 2.5rem;
+}
+
+/* Ligações rápidas para cada categoria */
+.categorias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.categorias a {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--linha);
+  border-radius: 999px;
+  background-color: var(--branco);
+  color: var(--texto);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.categorias a:hover {
+  border-color: var(--verde);
+  color: var(--verde);
+}
+
+.lista-categorias {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.categoria {
+  scroll-margin-top: calc(var(--cabecalho) + 1rem);
+}
+
+.categoria h2 {
+  font-size: 1.7rem;
+}
+
+.pergunta {
+  border-bottom: 1px solid var(--linha);
+}
+
+.pergunta:first-of-type {
+  border-top: 1px solid var(--linha);
+}
+
+.pergunta summary {
+  position: relative;
+  padding: 1.1rem 2.5rem 1.1rem 0;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+.pergunta summary::-webkit-details-marker {
+  display: none;
+}
+
+/* O sinal muda quando a resposta abre. */
+.pergunta summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 0.25rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--palha);
+  transform: translateY(-50%);
+}
+
+.pergunta[open] summary::after {
+  content: "−";
+}
+
+.pergunta summary:hover {
+  color: var(--verde);
+}
+
+.pergunta__resposta {
+  padding-bottom: 1.25rem;
+  color: var(--suave);
+}
+
+.pergunta__resposta p:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 960px) {
+  .perguntas {
+    grid-template-columns: 15rem 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .categorias {
+    position: sticky;
+    top: calc(var(--cabecalho) + 2rem);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lista-categorias {
+    gap: 3rem;
+  }
+}
