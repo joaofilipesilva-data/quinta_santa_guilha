@@ -1,0 +1,93 @@
+/* Conteúdo da página «Sobre nós» */
+
+.sobre__citacao {
+  margin: 0;
+  padding: 1.5rem;
+  background-color: var(--pedra);
+  border-radius: var(--raio);
+  font-family: var(--letra-titulos);
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  line-height: 1.45;
+  color: var(--verde-escuro);
+}
+
+.sobre__imagem img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+/* Três gerações da família, em linha do tempo */
+.geracoes {
+  position: relative;
+  margin: 2rem 0 0;
+  padding: 0 0 0 1.75rem;
+  list-style: none;
+}
+
+.geracoes::before {
+  content: "";
+  position: absolute;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  left: 0.35rem;
+  width: 2px;
+  background-color: var(--linha);
+}
+
+.geracoes li {
+  position: relative;
+  padding-bottom: 1.75rem;
+}
+
+.geracoes li:last-child {
+  padding-bottom: 0;
+}
+
+.geracoes li::before {
+  content: "";
+  position: absolute;
+  top: 0.45rem;
+  left: -1.75rem;
+  width: 0.85rem;
+  height: 0.85rem;
+  border: 2px solid var(--palha);
+  border-radius: 50%;
+  background-color: var(--creme);
+}
+
+.geracoes h3 {
+  margin-bottom: 0.25rem;
+  font-size: 1.25rem;
+}
+
+.geracoes p {
+  margin: 0;
+  color: var(--suave);
+}
+
+@media (min-width: 960px) {
+  .geracoes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem 0 0;
+  }
+
+  .geracoes::before {
+    top: 0.4rem;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    width: auto;
+    height: 2px;
+  }
+
+  .geracoes li {
+    padding-bottom: 0;
+  }
+
+  .geracoes li::before {
+    top: -2rem;
+    left: 0;
+  }
+}
