@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reservar | Quinta de Santa Guilha</title>
+  <meta name="description" content="Peça a sua reserva na Quinta de Santa Guilha, em Gouveia, e inscreva-se nas atividades da quinta.">
+  <link rel="icon" href="images/logo-96.png" type="image/png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/rodape.css">
+  <link rel="stylesheet" href="css/reservar.css">
+</head>
+<body>
+  <a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
+
+  <header class="cabecalho">
+    <div class="cabecalho__barra contentor">
+      <input type="checkbox" id="menu-abrir" class="menu-abrir" aria-label="Abrir o menu">
+      <a class="marca" href="index.html">
+        <img src="images/logo-96.png" alt="" width="44" height="44">
+        <span>Quinta de Santa Guilha</span>
+      </a>
+      <label for="menu-abrir" class="menu-botao">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu__lista">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="casa.html">A Casa</a></li>
+          <li><a href="quinta.html">A Quinta</a></li>
+          <li><a href="ano-na-quinta.html">O ano na quinta</a></li>
+          <li><a href="regiao.html">Região</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+          <li class="menu__sub">
+            <details>
+              <summary>Informações</summary>
+              <ul>
+                <li><a href="sobre-nos.html">Sobre nós</a></li>
+                <li><a href="perguntas-frequentes.html">Perguntas frequentes</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+        <a class="botao menu__reservar" href="reservar.html" aria-current="page">Reservar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <div class="pagina-topo">
+      <div class="contentor">
+        <nav class="migalhas" aria-label="Está aqui">
+          <ol>
+            <li><a href="index.html">Início</a></li>
+            <li aria-current="page">Reservar</li>
+          </ol>
+        </nav>
+        <h1>Reservar</h1>
+        <p class="introducao">Diga-nos as datas e quantas pessoas vêm. Respondemos com a disponibilidade e o preço da estadia.</p>
+      </div>
+    </div>
+
+    <div class="seccao">
+      <div class="contentor reservar">
+        <form class="formulario" action="mailto:reservasquintadesantaguilha@gmail.com?subject=Pedido%20de%20reserva" method="post" enctype="text/plain">
+          <div class="campo campo--largo">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" autocomplete="name" placeholder="O seu nome" required>
+            <span class="campo__erro">Escreva o seu nome.</span>
+          </div>
+          <div class="campo">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="nome@exemplo.pt" required>
+            <span class="campo__erro">Escreva um email válido.</span>
+          </div>
+          <div class="campo">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" autocomplete="tel" inputmode="tel" placeholder="+351 912 345 678" pattern="\+?([0-9] ?){8,14}[0-9]" title="Escreva 9 a 15 algarismos, com espaços opcionais.">
+            <span class="campo__erro">Escreva um telefone válido (9 a 15 algarismos).</span>
+          </div>
+          <div class="campo">
+            <label for="chegada">Chegada</label>
+            <input type="date" id="chegada" name="chegada" required>
+            <span class="campo__erro">Escolha a data de chegada.</span>
+          </div>
+          <div class="campo">
+            <label for="partida">Partida</label>
+            <input type="date" id="partida" name="partida" required>
+            <span class="campo__erro">Escolha uma data de partida depois da chegada.</span>
+          </div>
+          <div class="campo">
+            <label for="hospedes">Hóspedes</label>
+            <select id="hospedes" name="hospedes">
+              <option value="1">1 pessoa</option>
+              <option value="2" selected>2 pessoas</option>
+              <option value="3">3 pessoas</option>
+              <option value="4">4 pessoas</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="criancas">Crianças<span class="campo__nota">(opcional)</span></label>
+            <select id="criancas" name="criancas">
+              <option value="0" selected>0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+          <fieldset class="atividades-escolha">
+            <legend>Atividades e pacotes <span class="campo__nota">(opcional)</span></legend>
+            <p class="atividades-escolha__nota">
+              <span>Veja tudo em <a href="ano-na-quinta.html">O ano na quinta</a>.</span>
+            </p>
+            <div class="campo">
+              <label for="mes-estadia">Mês das atividades</label>
+              <select id="mes-estadia" name="mes">
+                <option value="" selected>Escolha o mês</option>
+                <option value="1">Janeiro</option>
+                <option value="2">Fevereiro</option>
+                <option value="3">Março</option>
+                <option value="4">Abril</option>
+                <option value="5">Maio</option>
+                <option value="6">Junho</option>
+                <option value="7">Julho</option>
+                <option value="8">Agosto</option>
+                <option value="9">Setembro</option>
+                <option value="10">Outubro</option>
+                <option value="11">Novembro</option>
+                <option value="12">Dezembro</option>
+              </select>
+            </div>
+            <p class="atividades-escolha__aviso" id="aviso-mes">As atividades aparecem depois de escolher o mês.</p>
+            <div class="atividades-escolha__grupo" id="atividades-mes" hidden>
+              <p class="atividades-escolha__titulo">Atividades da quinta</p>
+              <label class="opcao" data-meses="1 2">
+                <input type="checkbox" name="atividades" value="Poda da vinha">
+                <span>Poda da vinha <small>Janeiro e fevereiro</small></span>
+              </label>
+              <label class="opcao" data-meses="12 1">
+                <input type="checkbox" name="atividades" value="Prova do azeite novo">
+                <span>Prova do azeite novo <small>Dezembro e janeiro</small></span>
+              </label>
+              <label class="opcao" data-meses="3 4">
+                <input type="checkbox" name="atividades" value="Passeio pelo pomar em flor">
+                <span>Passeio pelo pomar em flor <small>Março e abril</small></span>
+              </label>
+              <label class="opcao" data-meses="5">
+                <input type="checkbox" name="atividades" value="Caminhada das giestas">
+                <span>Caminhada das giestas <small>Maio</small></span>
+              </label>
+              <label class="opcao" data-meses="6 7">
+                <input type="checkbox" name="atividades" value="Apanha da cereja e da fruta">
+                <span>Apanha da cereja e da fruta <small>Junho e julho</small></span>
+              </label>
+              <label class="opcao" data-meses="8">
+                <input type="checkbox" name="atividades" value="Apanha dos figos">
+                <span>Apanha dos figos <small>Agosto</small></span>
+              </label>
+              <label class="opcao" data-meses="9">
+                <input type="checkbox" name="atividades" value="Apanha da uva">
+                <span>Apanha da uva <small>Setembro</small></span>
+              </label>
+              <label class="opcao" data-meses="9">
+                <input type="checkbox" name="atividades" value="Pisa das uvas">
+                <span>Pisa das uvas <small>Setembro</small></span>
+              </label>
+              <label class="opcao" data-meses="10">
+                <input type="checkbox" name="atividades" value="Apanha da noz">
+                <span>Apanha da noz <small>Outubro</small></span>
+              </label>
+              <label class="opcao" data-meses="11">
+                <input type="checkbox" name="atividades" value="Apanha da azeitona">
+                <span>Apanha da azeitona <small>Novembro</small></span>
+              </label>
+              <label class="opcao" data-meses="11">
+                <input type="checkbox" name="atividades" value="Magusto de São Martinho">
+                <span>Magusto de São Martinho <small>Novembro</small></span>
+              </label>
+            </div>
+            <div class="atividades-escolha__grupo" id="pacotes" hidden>
+              <p class="atividades-escolha__titulo">Pacotes extra <span class="campo__nota">(pagos à parte)</span></p>
+              <div class="opcao opcao--pacote" data-meses="12 1 2 3 4">
+                <label class="opcao__marcar">
+                  <input type="checkbox" name="pacotes" value="Serra com neve: ski e trenó">
+                  <span>Serra com neve: ski e trenó <small>Dezembro a abril, se houver neve</small></span>
+                </label>
+                <div class="pacote-detalhes" hidden>
+                  <div class="campo">
+                    <label for="neve-data">Dia preferido para a neve</label>
+                    <input type="date" id="neve-data" name="neve_data">
+                  </div>
+                  <div class="campo">
+                    <label for="neve-pessoas">Pessoas para a neve</label>
+                    <input type="number" id="neve-pessoas" name="neve_pessoas" min="1" max="20" value="2" inputmode="numeric">
+                  </div>
+                  <fieldset class="pacote-detalhes__largo pacote-detalhes__escolhas">
+                    <legend>O que querem fazer</legend>
+                    <label><input type="checkbox" name="neve_atividades" value="Ski"> Ski</label>
+                    <label><input type="checkbox" name="neve_atividades" value="Snowboard"> Snowboard</label>
+                    <label><input type="checkbox" name="neve_atividades" value="Trenó e brincar na neve"> Trenó e brincar na neve</label>
+                    <label><input type="checkbox" name="neve_atividades" value="Alugar material"> Alugar material</label>
+                  </fieldset>
+                  <div class="campo">
+                    <label for="neve-aula">Pessoas na aula de grupo</label>
+                    <input type="number" id="neve-aula" name="neve_aula_pessoas" min="0" max="20" value="0" inputmode="numeric">
+                  </div>
+                  <p class="pacote-detalhes__nota pacote-detalhes__largo">A aula de grupo custa 55 € por pessoa, é dada pela escola de ski da estância, a partir dos 4 anos, e paga-se lá. O preço é o da estância e pode mudar de época para época. Só acontece com neve. Se não houver, propomos a visita guiada à serra.</p>
+                </div>
+              </div>
+
+              <div class="opcao opcao--pacote" data-meses="1 2 3 4 5 6 7 8 9 10 11 12">
+                <label class="opcao__marcar">
+                  <input type="checkbox" name="pacotes" value="Visita guiada à Serra da Estrela">
+                  <span>Visita guiada à Serra da Estrela <small>Todo o ano</small></span>
+                </label>
+                <div class="pacote-detalhes" hidden>
+                  <div class="campo">
+                    <label for="serra-data">Dia preferido para a visita guiada</label>
+                    <input type="date" id="serra-data" name="serra_data">
+                  </div>
+                  <div class="campo">
+                    <label for="serra-pessoas">Pessoas para a visita guiada</label>
+                    <input type="number" id="serra-pessoas" name="serra_pessoas" min="1" max="20" value="2" inputmode="numeric">
+                  </div>
+                  <p class="pacote-detalhes__nota pacote-detalhes__largo">Dia inteiro, com guia e transporte a partir da quinta. Preço sob consulta.</p>
+                </div>
+              </div>
+
+              <div class="opcao opcao--pacote" data-meses="1 2 3 4 5 6 7 8 9 10 11 12">
+                <label class="opcao__marcar">
+                  <input type="checkbox" name="pacotes" value="Prova de vinhos na Quinta Madre de Água">
+                  <span>Prova de vinhos na Quinta Madre de Água <small>Todo o ano · desde 30 € por adulto</small></span>
+                </label>
+                <div class="pacote-detalhes" hidden>
+                  <div class="campo">
+                    <label for="vinhos-data">Dia</label>
+                    <input type="date" id="vinhos-data" name="vinhos_data">
+                  </div>
+                  <div class="campo">
+                    <label for="vinhos-hora">Hora</label>
+                    <select id="vinhos-hora" name="vinhos_hora">
+                      <option value="15:00">15:00</option>
+                      <option value="16:00">16:00</option>
+                    </select>
+                  </div>
+                  <div class="campo">
+                    <label for="vinhos-adultos">Adultos</label>
+                    <input type="number" id="vinhos-adultos" name="vinhos_adultos" min="1" max="40" value="2" inputmode="numeric">
+                  </div>
+                  <div class="campo">
+                    <label for="vinhos-idioma">Idioma</label>
+                    <select id="vinhos-idioma" name="vinhos_idioma">
+                      <option value="Português">Português</option>
+                      <option value="Inglês">Inglês</option>
+                    </select>
+                  </div>
+                  <p class="pacote-detalhes__nota pacote-detalhes__largo">30 € por adulto · 20% de desconto a partir de 4 pessoas. A quinta confirma a hora connosco.</p>
+                </div>
+              </div>
+              <div class="opcao opcao--pacote" data-meses="11 12 1 2 3 4">
+                <label class="opcao__marcar">
+                  <input type="checkbox" name="pacotes" value="Visita à Queijaria Vale da Estrela">
+                  <span>Visita à Queijaria Vale da Estrela <small>Novembro a abril · Mangualde</small></span>
+                </label>
+                <div class="pacote-detalhes" hidden>
+                  <div class="campo">
+                    <label for="queijaria-data">Dia preferido para a queijaria</label>
+                    <input type="date" id="queijaria-data" name="queijaria_data">
+                  </div>
+                  <div class="campo">
+                    <label for="queijaria-pessoas">Pessoas para a queijaria</label>
+                    <input type="number" id="queijaria-pessoas" name="queijaria_pessoas" min="1" max="30" value="2" inputmode="numeric">
+                  </div>
+                  <p class="pacote-detalhes__nota pacote-detalhes__largo">Visita guiada à produção do queijo Serra da Estrela DOP. A hora é combinada com a queijaria. Preço sob consulta.</p>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <div class="campo campo--largo">
+            <label for="mensagem">Mensagem <span class="campo__nota">(opcional)</span></label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Vêm com crianças ou animais? Tem alguma pergunta?"></textarea>
+          </div>
+          <div class="formulario__botoes">
+            <button type="submit" class="botao">Enviar por email</button>
+            <a class="botao botao--contorno" href="https://wa.me/351900000000">Enviar por WhatsApp</a>
+          </div>
+          <p class="formulario__aviso">O pedido não fica confirmado até respondermos com a disponibilidade.</p>
+        </form>
+
+        <aside class="contactos" aria-labelledby="titulo-contactos">
+          <h2 id="titulo-contactos" class="visualmente-oculto">Contactos</h2>
+          <dl>
+            <dt>Morada</dt>
+            <dd>Quinta de Santa Guilha<br>6290-329 Gouveia, Guarda</dd>
+            <dt>Telefone</dt>
+            <dd><a href="tel:+351900000000">+351 900 000 000</a></dd>
+            <dt>Email</dt>
+            <dd><a href="mailto:reservasquintadesantaguilha@gmail.com">reservasquintadesantaguilha@gmail.com</a></dd>
+            <dt>Como chegar</dt>
+            <dd>De carro, cerca de 3 horas desde Lisboa e 2 horas desde o Porto.</dd>
+          </dl>
+          <div class="contactos__mapa">
+            <iframe class="mapa" src="https://www.google.com/maps?q=Quinta%20de%20Santa%20Guilha%2C%20Gouveia%2C%20Portugal&amp;ll=40.4855751%2C-7.599237&amp;z=17&amp;output=embed" title="Mapa da Quinta de Santa Guilha, em Gouveia" loading="lazy"></iframe>
+            <a href="https://www.google.com/maps/place/Quinta+de+Santa+Guilha/@40.4855746,-7.6095367,15z/data=!3m1!4b1!4m6!3m5!1s0xd3cdbe5e22af1f5:0x988d49d3d70666bd!8m2!3d40.4855751!4d-7.599237!16s%2Fg%2F11zh8s72pn?hl=en-US&amp;entry=ttu&amp;g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D">Abrir no mapa</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape__grelha contentor">
+      <div>
+        <a class="marca" href="index.html">
+          <img src="images/logo-96.png" alt="" width="44" height="44">
+          <span>Quinta de Santa Guilha</span>
+        </a>
+        <p class="rodape__frase">Turismo rural em Gouveia, na encosta da Serra da Estrela.</p>
+      </div>
+      <nav aria-label="Páginas do site">
+        <h2 class="rodape__titulo">A quinta</h2>
+        <ul class="rodape__ligacoes">
+          <li><a href="casa.html">A Casa</a></li>
+          <li><a href="quinta.html">A Quinta</a></li>
+          <li><a href="ano-na-quinta.html">O ano na quinta</a></li>
+          <li><a href="regiao.html">Região</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Informações">
+        <h2 class="rodape__titulo">Informações</h2>
+        <ul class="rodape__ligacoes">
+          <li><a href="sobre-nos.html">Sobre nós</a></li>
+          <li><a href="perguntas-frequentes.html">Perguntas frequentes</a></li>
+          <li><a href="reservar.html">Reservar</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="rodape__titulo">Contactos</h2>
+        <address>
+          Quinta de Santa Guilha<br>
+          6290-329 Gouveia, Guarda<br>
+          <a href="tel:+351900000000">+351 900 000 000</a><br>
+          <a href="mailto:reservasquintadesantaguilha@gmail.com">reservasquintadesantaguilha@gmail.com</a>
+        </address>
+      </div>
+    </div>
+    <div class="rodape__fim contentor">
+      <p>&copy; 2026 Quinta de Santa Guilha · Alojamento Local n.º 000000/AL</p>
+      <a href="https://www.livroreclamacoes.pt/">Livro de Reclamações</a>
+    </div>
+  </footer>
+
+  <script src="js/reservar.js"></script>
+</body>
+</html>

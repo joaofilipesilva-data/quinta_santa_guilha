@@ -1,0 +1,336 @@
+/* Página de reservas: o formulário, os contactos e o mapa */
+
+.reservar {
+  display: grid;
+  gap: 3rem;
+}
+
+/* O formulário */
+.formulario {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.campo label,
+.formulario legend {
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.campo__nota {
+  font-weight: 400;
+  color: var(--suave);
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background-color: var(--branco);
+  color: var(--texto);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.campo textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  border-color: var(--verde);
+  outline: 2px solid var(--verde-claro);
+  outline-offset: 0;
+}
+
+/* O erro só aparece depois de a pessoa mexer no campo */
+.campo input:user-invalid {
+  border-color: #b3261e;
+  background-color: #fdf3f2;
+}
+
+.campo__erro {
+  display: none;
+  font-size: 0.85rem;
+  color: #b3261e;
+}
+
+.campo input:user-invalid ~ .campo__erro {
+  display: block;
+}
+
+/* No telefone, mostrar o erro logo que exista texto inválido. */
+.campo input[type="tel"]:invalid:not(:placeholder-shown) {
+  border-color: #b3261e;
+  background-color: #fdf3f2;
+}
+
+.campo input[type="tel"]:invalid:not(:placeholder-shown) ~ .campo__erro {
+  display: block;
+}
+
+/* Atividades e pacotes (só para quem reserva) */
+.atividades-escolha {
+  margin: 0;
+  padding: 1.25rem;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background-color: var(--branco);
+}
+
+.atividades-escolha legend {
+  padding-inline: 0.35rem;
+}
+
+.atividades-escolha .atividades-escolha__nota {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.atividades-escolha p {
+  margin-bottom: 0.75rem;
+  font-size: 0.92rem;
+  color: var(--suave);
+}
+
+.opcao {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.4rem 0;
+  cursor: pointer;
+}
+
+.opcao input {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.25rem;
+  accent-color: var(--verde);
+}
+
+/* Opção escondida pelo filtro do mês (o display: flex anularia o hidden). */
+.opcao[hidden] {
+  display: none;
+}
+
+.opcao small {
+  display: block;
+  color: var(--suave);
+}
+
+.formulario__botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.formulario__aviso {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--suave);
+}
+
+.atividades-escolha .campo {
+  margin-bottom: 1rem;
+}
+
+.atividades-escolha .atividades-escolha__titulo {
+  margin: 1rem 0 0.25rem;
+  font-family: var(--letra);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--texto);
+}
+
+.atividades-escolha__aviso {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border-radius: var(--raio);
+  background-color: var(--pedra);
+}
+
+/* Contactos e mapa */
+.contactos {
+  display: grid;
+  gap: 1.25rem;
+  align-content: start;
+}
+
+.contactos dl {
+  margin: 0;
+}
+
+.contactos dt {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--palha);
+}
+
+.contactos dd {
+  margin: 0.2rem 0 1.1rem;
+}
+
+.mapa {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 0;
+  border-radius: var(--raio);
+  background-color: var(--pedra);
+}
+
+.contactos__mapa a {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-weight: 600;
+}
+
+/* Ecrãs médios (a partir de 600px) */
+@media (min-width: 600px) {
+  .formulario {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.25rem;
+  }
+
+  .campo--largo,
+  .atividades-escolha,
+  .formulario__botoes,
+  .formulario__aviso {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Ecrãs grandes (a partir de 960px) */
+@media (min-width: 960px) {
+  .reservar {
+    grid-template-columns: 1.7fr 1fr;
+    gap: 4rem;
+  }
+}
+
+/* Detalhes dos pacotes extra */
+
+/* Pacote com detalhes: a caixa de escolha fica em .opcao__marcar */
+.opcao--pacote {
+  display: block;
+  padding: 0;
+  cursor: auto;
+}
+
+.opcao__marcar {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.4rem 0;
+  cursor: pointer;
+}
+
+.opcao__marcar input {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.25rem;
+  accent-color: var(--verde);
+}
+
+.opcao__marcar small {
+  display: block;
+  color: var(--suave);
+}
+
+/* Os detalhes ficam escondidos (atributo hidden) até a pessoa escolher o pacote.
+   O JavaScript (js/reservar.js) tira o hidden. */
+.pacote-detalhes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem 1rem;
+  margin: 0.35rem 0 0.9rem 1.8rem;
+  padding: 1rem;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background-color: var(--creme);
+}
+
+.pacote-detalhes[hidden] {
+  display: none;
+}
+
+.atividades-escolha .pacote-detalhes .campo {
+  margin-bottom: 0;
+}
+
+.pacote-detalhes .campo label {
+  font-size: 0.85rem;
+}
+
+/* Anula o tamanho das caixas de escolha (.opcao input) nestes campos */
+.opcao--pacote .pacote-detalhes .campo input,
+.opcao--pacote .pacote-detalhes .campo select {
+  width: 100%;
+  height: auto;
+  margin-top: 0;
+  min-height: 44px;
+  padding: 0.55rem 0.7rem;
+  font-size: 0.95rem;
+}
+
+.pacote-detalhes__largo {
+  grid-column: 1 / -1;
+}
+
+.pacote-detalhes__escolhas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.pacote-detalhes__escolhas legend {
+  width: 100%;
+  margin-bottom: 0.35rem;
+  padding: 0;
+  font-size: 0.85rem;
+}
+
+.pacote-detalhes__escolhas label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+
+.pacote-detalhes__escolhas input {
+  width: 1.05rem;
+  height: 1.05rem;
+  accent-color: var(--verde);
+}
+
+.atividades-escolha p.pacote-detalhes__nota {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+/* No telemóvel, os detalhes ocupam a largura toda */
+@media (max-width: 560px) {
+  .pacote-detalhes {
+    margin-left: 0;
+  }
+}
