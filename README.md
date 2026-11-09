@@ -17,7 +17,7 @@ O website serve para dar a conhecer a quinta: mostrar a casa, a região e as ati
 
 ## Estrutura do website
 
-O website tem nove páginas. Seis estão no menu principal; Sobre nós e Perguntas frequentes ficam dentro do item Informações, e O ano na quinta abre a partir da página A Quinta.
+O website tem nove páginas. Seis estão no menu principal, ao lado do botão Reservar; Sobre nós e Perguntas frequentes ficam dentro do item Informações.
 
 ```
 Menu: Início | A Casa | A Quinta | O ano na quinta | Região | Galeria | Informações | Reservar
@@ -45,7 +45,7 @@ Início ......................... apresentação da quinta e destaques das pági
 - Página "O ano na quinta" com gráfico das horas de luz e do trabalho de cada mês
 - Atividades por época do ano (apanha da uva, pisa das uvas, apanha da azeitona), filtradas ao escolher um mês no gráfico
 - Inscrição nas atividades para quem tem reserva na quinta
-- Galeria em que as fotografias se ampliam para mostrar os detalhes
+- Galeria em que cada fotografia abre em tamanho grande para mostrar os detalhes
 - Perguntas frequentes organizadas por categorias
 - Formulário de pedido de reserva com validação básica; integração dos dados com email e WhatsApp prevista para uma entrega seguinte
 - Contactos e mapa
@@ -67,9 +67,9 @@ Os seguintes extras estão previstos, mas ainda não fazem parte desta entrega:
 - Nove páginas em português, com navegação entre elas
 - Layout responsivo para telemóvel, tablet e computador
 - Vídeo de drone e slideshow na página inicial
-- Galeria com fotografias ampliadas
+- Galeria com fotografias em tamanho grande
 - Gráfico anual com filtro de atividades por mês
-- Formulário de reserva com validação HTML e opções de atividades
+- Formulário de reserva com validação HTML e opções de atividades conforme o mês, preenchido a partir da data de chegada
 - Contactos, mapa e perguntas frequentes
 
 ### Planeado
@@ -102,13 +102,14 @@ No telemóvel, a página inicial aparece em três ecrãs (o topo, a parte seguin
 
 ## Código
 
-Primeira entrega do código: só HTML e CSS, com design responsivo para telemóvel, tablet e computador. O JavaScript entra nas entregas seguintes.
+O site é feito em HTML e CSS, com design responsivo para telemóvel, tablet e computador. O slideshow, o filtro por mês e o formulário de reserva usam três ficheiros pequenos de JavaScript.
 
 ### Tecnologias
 
 - **HTML5** — estrutura e conteúdo das páginas.
-- **CSS3** — estilos, layout responsivo e interações desta entrega.
-- **JavaScript, backend e base de dados** — não são usados nesta versão.
+- **CSS3** — estilos, layout responsivo, menu do telemóvel e perguntas frequentes.
+- **JavaScript** — slideshow, filtro por mês e formulário de reserva, sem bibliotecas externas.
+- **Backend e base de dados** — não são usados nesta versão.
 
 ### Requisitos
 
@@ -133,7 +134,7 @@ Start-Process .\index.html
 xdg-open ./index.html
 ```
 
-O site usa apenas HTML e CSS; não precisa de servidor, `localhost`, Node.js ou npm.
+O JavaScript corre no próprio navegador; o site não precisa de servidor, `localhost`, Node.js ou npm.
 
 ### Pedido de reserva
 
@@ -157,30 +158,36 @@ quinta_santa_guilha/
 │   ├── menu.css               cabeçalho e menu
 │   ├── rodape.css             rodapé
 │   └── (um ficheiro por página)
+├── js/
+│   ├── slides.js              slideshow da página inicial
+│   ├── ano-na-quinta.js       filtro por mês de O ano na quinta
+│   └── reservar.js            atividades e pacotes do formulário de reserva
 ├── fonts/
 ├── images/
 └── videos/                    vídeo de drone da página inicial
 ```
 
-Sem JavaScript, os elementos interativos foram feitos só com HTML e CSS:
+Os elementos interativos feitos com JavaScript:
+
+- Slideshow da página inicial: setas que trocam a fotografia, a legenda e o número (`js/slides.js`)
+- Filtro por mês em O ano na quinta: cada atividade indica os seus meses em `data-meses` e o script esconde as que não são do mês escolhido (`js/ano-na-quinta.js`)
+- Atividades do formulário de reserva conforme o mês escolhido (preenchido a partir da data de chegada; só se podem escolher os meses da estadia) e detalhes de cada pacote extra; os campos escondidos ficam desativados e não vão no pedido, e a data de partida tem de ser depois da chegada (`js/reservar.js`)
+
+Os elementos interativos feitos só com HTML e CSS:
 
 - Menu do telemóvel em ecrã inteiro: caixa de seleção escondida e o seletor `:checked`
 - Submenu Informações e respostas das perguntas frequentes: elemento `<details>`
-- Slideshow da página inicial: animação CSS e botões de opção para as setas e os pontos
-- Fotografias ampliadas na galeria: seletor `:target`
-- Filtro por mês em O ano na quinta: botões de opção e o seletor `:checked`
+- Fotografias da galeria: cada miniatura é uma ligação para a fotografia grande
 - Janela de cada atividade e pacote extra, com fotografia e descrição: seletor `:target`
-- Atividades do formulário de reserva conforme o mês da estadia: seletor `:has()`
-- Validação do formulário de reserva: atributos `required` e `type="email"`
+- Validação do formulário de reserva: atributos `required`, `type="email"` e `pattern`
 
 ## Próximos passos
 
-Numa fase seguinte, o projeto acrescenta JavaScript ao site que já existe, sem mudar a estrutura das páginas:
+Numa fase seguinte, o projeto acrescenta mais JavaScript ao site que já existe, sem mudar a estrutura das páginas:
 
 - **Tempo na quinta e na serra:** mostrar a temperatura atual na quinta e na Torre, na Serra da Estrela, usando dados do [Open-Meteo](https://open-meteo.com/), que não requer chave de API.
 - **Tempos de viagem de carro:** apresentar na página Região o tempo de carro entre a quinta e cada lugar, calculado com o OSRM (OpenStreetMap).
 - **Como chegar de Coimbra, Lisboa e Porto:** permitir escolher a cidade de partida e o meio de transporte (carro, comboio ou autocarro), mostrando um tempo aproximado e o percurso no Google Maps. Como não há uma API aberta com os horários da CP e da Rede Expressos, os horários atualizados serão consultados no Google Maps.
-- **Mês da estadia automático:** preencher o mês no formulário a partir da data de chegada.
 - **Pedido de reserva por email ou WhatsApp:** preparar uma mensagem com as datas, o número de hóspedes, as atividades e os pacotes escolhidos, para a pessoa rever e enviar na aplicação escolhida.
 
 Mais tarde, poderão ser desenvolvidos os extras listados acima. O calendário de disponibilidade, o cálculo do preço e o armazenamento das reservas vão precisar de um serviço ou servidor próprio.
