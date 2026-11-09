@@ -1,0 +1,429 @@
+/* O gráfico dos meses e as atividades de cada época.
+   O filtro por mês é feito em js/ano-na-quinta.js: esconde o que não
+   é do mês escolhido com o atributo hidden. */
+
+/* Garante que o hidden esconde mesmo os elementos com display: flex */
+[hidden] {
+  display: none !important;
+}
+
+/* Gráfico */
+.grafico {
+  padding: clamp(1.25rem, 4vw, 2rem);
+  border-radius: var(--raio);
+  background-color: var(--branco);
+}
+
+.grafico h2 {
+  font-size: 1.6rem;
+}
+
+.grafico__legenda {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--suave);
+}
+
+.grafico__meses {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: end;
+  gap: 0.25rem;
+  margin: 1.5rem 0 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.grafico__mes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  width: 100%;
+  padding: 0 0 0.25rem;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.grafico__coluna {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 150px;
+  border-bottom: 1px solid var(--linha);
+}
+
+/* A altura de cada barra vem das horas de luz do mês (--luz), que vão das 8 às 16 */
+.grafico__coluna::before {
+  content: "";
+  width: 100%;
+  height: calc((var(--luz) - 8) / 8 * 100%);
+  border-radius: 4px 4px 0 0;
+  background-color: var(--palha);
+  opacity: 0.45;
+  transition: opacity 0.2s, background-color 0.2s;
+}
+
+.grafico__mes:hover .grafico__coluna::before {
+  opacity: 0.8;
+}
+
+.grafico__nome {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.grafico__horas {
+  display: none;
+  font-size: 0.75rem;
+  color: var(--suave);
+}
+
+.grafico__todos {
+  min-height: 42px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.92rem;
+}
+
+/* Se estiver escolhido "todas", as barras ficam todas com a cor forte */
+.grafico--todos .grafico__coluna::before {
+  opacity: 0.75;
+}
+
+/* O mês escolhido fica a verde */
+.grafico__mes[aria-pressed="true"] .grafico__coluna::before {
+  background-color: var(--verde);
+  opacity: 1;
+}
+
+/* Trabalho do mês */
+.trabalhos {
+  margin-block: 2rem 3rem;
+}
+
+.trabalho {
+  max-width: 46rem;
+  padding: 1.5rem;
+  background-color: var(--pedra);
+  border-radius: var(--raio);
+}
+
+.trabalho h3 {
+  margin-bottom: 0.35rem;
+}
+
+.trabalho p {
+  margin: 0;
+}
+
+.trabalho .etiqueta {
+  margin-bottom: 0.5rem;
+}
+
+/* Atividades por época */
+/* Uma época sem nenhuma atividade visível no mês escolhido fica escondida */
+.estacao:not(:has(.atividade:not([hidden]))) {
+  display: none;
+}
+
+.estacao + .estacao {
+  margin-top: 2.5rem;
+}
+
+.estacao h2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  font-size: 1.8rem;
+}
+
+.estacao h2 small {
+  font-family: var(--letra);
+  font-size: 0.95rem;
+  color: var(--suave);
+}
+
+.atividades__lista {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.atividade {
+  padding: 1.35rem 1.5rem;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background-color: var(--branco);
+}
+
+.atividade h3 {
+  margin-bottom: 0.35rem;
+  font-size: 1.3rem;
+}
+
+.atividade p {
+  margin: 0;
+  color: var(--suave);
+}
+
+.atividade__meses {
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: 0.6rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background-color: var(--verde-claro);
+  color: var(--verde);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.atividade {
+  display: flex;
+  flex-direction: column;
+}
+
+.atividade__abrir {
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 0.9rem;
+  font-weight: 600;
+}
+
+.atividade__abrir::after {
+  content: " ›";
+}
+
+/* Os pacotes extra têm um tom diferente porque são pagos à parte */
+.atividade--pacote {
+  border-color: var(--palha);
+}
+
+.atividade--pacote .atividade__meses {
+  background-color: #f3e8d4;
+  color: #7a5718;
+}
+
+.pacotes__texto {
+  max-width: 46rem;
+  color: var(--suave);
+}
+
+/* A janela com a fotografia e a explicação da atividade.
+   Abre quando se clica em "Ver como é" (por causa do :target). */
+.detalhe {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.detalhe:target {
+  display: flex;
+}
+
+body:has(.detalhe:target) {
+  overflow: hidden;
+}
+
+.detalhe__fundo {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(12, 18, 15, 0.8);
+}
+
+.detalhe__caixa {
+  position: relative;
+  display: grid;
+  width: 100%;
+  max-width: 980px;
+  max-height: 100%;
+  overflow-y: auto;
+  border-radius: var(--raio);
+  background-color: var(--creme);
+  box-shadow: var(--sombra);
+}
+
+/* As atividades da quinta abrem só com texto, numa janela mais estreita */
+.detalhe__caixa:not(:has(.detalhe__media)) {
+  max-width: 600px;
+}
+
+.detalhe__fechar {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.92);
+  color: var(--texto);
+  font-size: 1.8rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.detalhe__fechar:hover {
+  background-color: var(--branco);
+  color: var(--verde);
+}
+
+.detalhe__media img,
+.detalhe__media video {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.detalhe__media figcaption {
+  margin: 0;
+  padding: 0.5rem 1.25rem 0;
+  font-size: 0.9rem;
+}
+
+.detalhe__texto {
+  padding: 1.25rem 1.25rem 1.75rem;
+}
+
+.detalhe__texto h2 {
+  font-size: 1.9rem;
+}
+
+.detalhe__dados {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.4rem 1rem;
+  margin: 1.25rem 0 1.5rem;
+  padding: 1rem 0;
+  border-block: 1px solid var(--linha);
+  font-size: 0.95rem;
+}
+
+.detalhe__dados dt {
+  font-weight: 600;
+}
+
+.detalhe__dados dd {
+  margin: 0;
+  color: var(--suave);
+}
+
+/* Nota a lembrar que a inscrição só vale para quem tem reserva */
+.inscricao {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 3rem;
+  padding: 1.5rem;
+  border-radius: var(--raio);
+  background-color: var(--verde);
+  color: var(--branco);
+}
+
+.inscricao h2 {
+  margin-bottom: 0.25rem;
+  font-size: 1.5rem;
+  color: var(--branco);
+}
+
+.inscricao p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Ecrãs médios (a partir de 600px) */
+@media (min-width: 600px) {
+  .grafico__meses {
+    gap: 0.5rem;
+  }
+
+  .grafico__coluna {
+    height: 200px;
+  }
+
+  .grafico__nome {
+    font-size: 0.85rem;
+  }
+
+  .grafico__horas {
+    display: block;
+  }
+
+  .atividades__lista {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .inscricao {
+    grid-template-columns: 1fr auto;
+    padding: 2rem;
+  }
+}
+
+/* Ecrãs grandes (a partir de 960px) */
+@media (min-width: 960px) {
+  .grafico__coluna {
+    height: 240px;
+  }
+
+  .atividades__lista {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .detalhe__caixa {
+    grid-template-columns: 1.1fr 1fr;
+    align-items: stretch;
+  }
+
+  .detalhe__caixa:not(:has(.detalhe__media)) {
+    grid-template-columns: 1fr;
+  }
+
+  .detalhe__media {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .detalhe__media img,
+  .detalhe__media video {
+    flex-grow: 1;
+    height: 100%;
+    min-height: 420px;
+  }
+
+  .detalhe__media figcaption {
+    padding-bottom: 0.75rem;
+  }
+
+  .detalhe__texto {
+    padding: 2.5rem 2rem 2rem;
+  }
+}
+
+/* Estilos dos novos pacotes */
+
+/* Dois botoes lado a lado na janela (Reservar + Ver a quinta) */
+.detalhe__botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Credito da fotografia de um parceiro */
+.detalhe__credito {
+  display: block;
+  font-size: 1em;
+  opacity: 0.75;
+}

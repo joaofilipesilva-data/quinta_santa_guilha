@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>O ano na quinta | Quinta de Santa Guilha</title>
+  <meta name="description" content="O trabalho de cada mês na quinta, as atividades de cada época e os pacotes extra: apanha da uva, pisa das uvas, apanha da azeitona, Serra da Estrela e provas.">
+  <link rel="icon" href="images/logo-96.png" type="image/png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/rodape.css">
+  <link rel="stylesheet" href="css/ano-na-quinta.css">
+  <script src="js/ano-na-quinta.js" defer></script>
+</head>
+<body>
+  <a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
+
+  <header class="cabecalho">
+    <div class="cabecalho__barra contentor">
+      <input type="checkbox" id="menu-abrir" class="menu-abrir" aria-label="Abrir o menu">
+      <a class="marca" href="index.html">
+        <img src="images/logo-96.png" alt="" width="44" height="44">
+        <span>Quinta de Santa Guilha</span>
+      </a>
+      <label for="menu-abrir" class="menu-botao">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu__lista">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="casa.html">A Casa</a></li>
+          <li><a href="quinta.html">A Quinta</a></li>
+          <li><a href="ano-na-quinta.html" aria-current="page">O ano na quinta</a></li>
+          <li><a href="regiao.html">Região</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+          <li class="menu__sub">
+            <details>
+              <summary>Informações</summary>
+              <ul>
+                <li><a href="sobre-nos.html">Sobre nós</a></li>
+                <li><a href="perguntas-frequentes.html">Perguntas frequentes</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+        <a class="botao menu__reservar" href="reservar.html">Reservar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <div class="pagina-topo">
+      <div class="contentor">
+        <nav class="migalhas" aria-label="Está aqui">
+          <ol>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="quinta.html">A Quinta</a></li>
+            <li aria-current="page">O ano na quinta</li>
+          </ol>
+        </nav>
+        <h1>O ano na quinta</h1>
+        <p class="introducao">Cada mês traz um trabalho diferente na terra. Escolha um mês no gráfico para ver o que acontece nessa altura e em que atividades pode participar.</p>
+      </div>
+    </div>
+
+    <div class="seccao">
+      <div class="contentor">
+
+        <section class="grafico grafico--todos" aria-labelledby="titulo-grafico">
+          <h2 id="titulo-grafico">Horas de luz em Gouveia</h2>
+          <p class="grafico__legenda">Horas de luz por dia, a meio de cada mês. Clique num mês para filtrar as atividades.</p>
+          <ol class="grafico__meses">
+            <li>
+              <button type="button" class="grafico__mes" data-mes="1" aria-pressed="false" style="--luz: 9.58">
+                <span class="grafico__coluna"></span>
+                <span class="grafico__nome">Jan</span>
+                <span class="grafico__horas">9h35</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="grafico__mes" data-mes="2" aria-pressed="false" style="--luz: 10.60">
+                <span class="grafico__coluna"></span>
+                <span class="grafico__nome">Fev</span>
+                <span class="grafico__horas">10h36</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="grafico__mes" data-mes="3" aria-pressed="false" style="--luz: 11.83">
+                <span class="grafico__coluna"></span>
+                <span class="grafico__nome">Mar</span>
+                <span class="grafico__horas">11h50</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="grafico__mes" data-mes="4" aria-pressed="false" style="--luz: 13.23">
+                <span class="grafico__coluna"></span>
+                <span class="grafico__nome">Abr</span>
+                <span class="grafico__horas">13h14</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="grafico__mes" data-mes="5" aria-pressed="false" style="--luz: 14.41">
+                <span class="grafico__coluna"></span>
+                <span class="grafico__nome">Mai</span>
+                <span class="grafico__horas">14h25</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="grafico__mes" data-mes="6" aria-pressed="false" style="--luz: 15.05">
+                <span class="grafico__coluna"></span>
+                <span class="grafico__nome">Jun</span>
+                <span class="grafico__horas">15h03</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="grafico__mes" data-mes="7" aria-pressed="false" style="--luz: 14.79">
+                <span class="grafico__coluna"></span>
+                <span class="grafico__nome">Jul</span>
+                <span class="grafico__horas">14h47</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="grafico__mes" data-mes="8" aria-pressed="false" style="--luz: 13.77">
+                <span class="grafico__coluna"></span>
+                <span class="grafico__nome">Ago</span>
+                <span class="grafico__horas">13h46</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="grafico__mes" data-mes="9" aria-pressed="false" style="--luz: 12.40">
+                <span class="grafico__coluna"></span>
+                <span class="grafico__nome">Set</span>
+                <span class="grafico__horas">12h24</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="grafico__mes" data-mes="10" aria-pressed="false" style="--luz: 11.04">
+                <span class="grafico__coluna"></span>
+                <span class="grafico__nome">Out</span>
+                <span class="grafico__horas">11h03</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="grafico__mes" data-mes="11" aria-pressed="false" style="--luz: 9.86">
+                <span class="grafico__coluna"></span>
+                <span class="grafico__nome">Nov</span>
+                <span class="grafico__horas">9h52</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="grafico__mes" data-mes="12" aria-pressed="false" style="--luz: 9.29">
+                <span class="grafico__coluna"></span>
+                <span class="grafico__nome">Dez</span>
+                <span class="grafico__horas">9h17</span>
+              </button>
+            </li>
+          </ol>
+          <button type="button" class="botao botao--contorno grafico__todos" hidden>Ver todas as atividades</button>
+        </section>
+
+        <div class="trabalhos" aria-live="polite">
+          <p class="trabalho trabalho--todos">Escolha um mês no gráfico para ver o trabalho dessa altura e só as atividades desse mês.</p>
+          <article class="trabalho" data-meses="1" hidden>
+            <span class="etiqueta">Janeiro · 9h35 de luz por dia</span>
+            <h3>Poda e lareira</h3>
+            <p>A vinha descansa e começa a poda. Lá fora está frio; cá dentro, a lareira fica acesa o dia inteiro. Com sorte, há neve nos pontos altos da serra.</p>
+          </article>
+          <article class="trabalho" data-meses="2" hidden>
+            <span class="etiqueta">Fevereiro · 10h36 de luz por dia</span>
+            <h3>Poda do pomar</h3>
+            <p>Limpam-se as oliveiras e as árvores de fruto. Os dias começam a crescer e há manhãs de geada no vale.</p>
+          </article>
+          <article class="trabalho" data-meses="3" hidden>
+            <span class="etiqueta">Março · 11h50 de luz por dia</span>
+            <h3>A terra acorda</h3>
+            <p>Rebentam as primeiras folhas na vinha e o pomar começa a florir. Boa altura para caminhar antes do calor.</p>
+          </article>
+          <article class="trabalho" data-meses="4" hidden>
+            <span class="etiqueta">Abril · 13h14 de luz por dia</span>
+            <h3>Pomar em flor</h3>
+            <p>As árvores de fruto estão em flor e a erva cresce alta entre as oliveiras.</p>
+          </article>
+          <article class="trabalho" data-meses="5" hidden>
+            <span class="etiqueta">Maio · 14h25 de luz por dia</span>
+            <h3>Giestas na serra</h3>
+            <p>A serra fica amarela com as giestas em flor. Na quinta, a vinha lança os primeiros cachos.</p>
+          </article>
+          <article class="trabalho" data-meses="6" hidden>
+            <span class="etiqueta">Junho · 15h03 de luz por dia</span>
+            <h3>Primeira fruta</h3>
+            <p>Chegam as cerejas e a primeira fruta do pomar. Os jantares passam para o pátio e acabam tarde.</p>
+          </article>
+          <article class="trabalho" data-meses="7" hidden>
+            <span class="etiqueta">Julho · 14h47 de luz por dia</span>
+            <h3>Noites frescas</h3>
+            <p>Os dias são quentes, mas a altitude traz noites frescas. As tardes passam-se nas praias fluviais e na lagoa do Vale do Rossim.</p>
+          </article>
+          <article class="trabalho" data-meses="8" hidden>
+            <span class="etiqueta">Agosto · 13h46 de luz por dia</span>
+            <h3>Figos maduros</h3>
+            <p>As figueiras junto ao pátio dão figos. É o mês das festas nas aldeias.</p>
+          </article>
+          <article class="trabalho" data-meses="9" hidden>
+            <span class="etiqueta">Setembro · 12h24 de luz por dia</span>
+            <h3>Vindima</h3>
+            <p>Apanham-se as uvas da vinha e os últimos figos. A luz do fim da tarde sobre o vale é das mais bonitas do ano.</p>
+          </article>
+          <article class="trabalho" data-meses="10" hidden>
+            <span class="etiqueta">Outubro · 11h03 de luz por dia</span>
+            <h3>Nozes e castanhas</h3>
+            <p>Cai a noz no nogueiral e começam as castanhas. As folhas da vinha ficam amarelas e vermelhas.</p>
+          </article>
+          <article class="trabalho" data-meses="11" hidden>
+            <span class="etiqueta">Novembro · 9h52 de luz por dia</span>
+            <h3>Apanha da azeitona</h3>
+            <p>Varejam-se as oliveiras e a azeitona segue para o lagar. Pelo São Martinho há magusto.</p>
+          </article>
+          <article class="trabalho" data-meses="12" hidden>
+            <span class="etiqueta">Dezembro · 9h17 de luz por dia</span>
+            <h3>Azeite novo</h3>
+            <p>Azeite novo no pão, queijo da serra e a lareira outra vez acesa. A Torre costuma ter neve.</p>
+          </article>
+        </div>
+
+        <div class="atividades">
+          <section class="estacao" aria-labelledby="titulo-inverno">
+            <h2 id="titulo-inverno">Inverno <small>dezembro a fevereiro</small></h2>
+            <ul class="atividades__lista">
+              <li class="atividade" data-meses="1 2" id="cartao-poda-da-vinha">
+                <span class="atividade__meses">Janeiro e fevereiro</span>
+                <h3>Poda da vinha</h3>
+                <p>Aprenda a podar as videiras com quem trabalha a vinha há muitos anos.</p>
+                <a class="atividade__abrir" href="#poda-da-vinha">Ver como é<span class="visualmente-oculto">: Poda da vinha</span></a>
+              </li>
+              <li class="atividade" data-meses="12 1" id="cartao-prova-do-azeite-novo">
+                <span class="atividade__meses">Dezembro e janeiro</span>
+                <h3>Prova do azeite novo</h3>
+                <p>Pão quente, azeite acabado de fazer e queijo da serra, junto à lareira.</p>
+                <a class="atividade__abrir" href="#prova-do-azeite-novo">Ver como é<span class="visualmente-oculto">: Prova do azeite novo</span></a>
+              </li>
+            </ul>
+          </section>
+          <section class="estacao" aria-labelledby="titulo-primavera">
+            <h2 id="titulo-primavera">Primavera <small>março a maio</small></h2>
+            <ul class="atividades__lista">
+              <li class="atividade" data-meses="3 4" id="cartao-passeio-pomar-em-flor">
+                <span class="atividade__meses">Março e abril</span>
+                <h3>Passeio pelo pomar em flor</h3>
+                <p>Um passeio entre as árvores de fruto em flor, com paragem no nogueiral.</p>
+                <a class="atividade__abrir" href="#passeio-pomar-em-flor">Ver como é<span class="visualmente-oculto">: Passeio pelo pomar em flor</span></a>
+              </li>
+              <li class="atividade" data-meses="5" id="cartao-caminhada-das-giestas">
+                <span class="atividade__meses">Maio</span>
+                <h3>Caminhada das giestas</h3>
+                <p>Caminhada pela encosta quando a serra fica amarela com as giestas.</p>
+                <a class="atividade__abrir" href="#caminhada-das-giestas">Ver como é<span class="visualmente-oculto">: Caminhada das giestas</span></a>
+              </li>
+            </ul>
+          </section>
+          <section class="estacao" aria-labelledby="titulo-verao">
+            <h2 id="titulo-verao">Verão <small>junho a agosto</small></h2>
+            <ul class="atividades__lista">
+              <li class="atividade" data-meses="6 7" id="cartao-apanha-da-fruta">
+                <span class="atividade__meses">Junho e julho</span>
+                <h3>Apanha da cereja e da fruta</h3>
+                <p>Apanhar a fruta do pomar para o pequeno-almoço e para levar para casa.</p>
+                <a class="atividade__abrir" href="#apanha-da-fruta">Ver como é<span class="visualmente-oculto">: Apanha da cereja e da fruta</span></a>
+              </li>
+              <li class="atividade" data-meses="8" id="cartao-apanha-dos-figos">
+                <span class="atividade__meses">Agosto</span>
+                <h3>Apanha dos figos</h3>
+                <p>Figos das figueiras do pátio, para comer frescos ou fazer doce.</p>
+                <a class="atividade__abrir" href="#apanha-dos-figos">Ver como é<span class="visualmente-oculto">: Apanha dos figos</span></a>
+              </li>
+            </ul>
+          </section>
+          <section class="estacao" aria-labelledby="titulo-outono">
+            <h2 id="titulo-outono">Outono <small>setembro a novembro</small></h2>
+            <ul class="atividades__lista">
+              <li class="atividade" data-meses="9" id="cartao-apanha-da-uva">
+                <span class="atividade__meses">Setembro</span>
+                <h3>Apanha da uva</h3>
+                <p>Participe na vindima: de tesoura e cesto na mão, ao longo das filas da vinha.</p>
+                <a class="atividade__abrir" href="#apanha-da-uva">Ver como é<span class="visualmente-oculto">: Apanha da uva</span></a>
+              </li>
+              <li class="atividade" data-meses="9" id="cartao-pisa-das-uvas">
+                <span class="atividade__meses">Setembro</span>
+                <h3>Pisa das uvas</h3>
+                <p>No fim da vindima, as uvas pisam-se como antigamente, a pé descalço.</p>
+                <a class="atividade__abrir" href="#pisa-das-uvas">Ver como é<span class="visualmente-oculto">: Pisa das uvas</span></a>
+              </li>
+              <li class="atividade" data-meses="10" id="cartao-apanha-da-noz">
+                <span class="atividade__meses">Outubro</span>
+                <h3>Apanha da noz</h3>
+                <p>Apanhar as nozes que caem no nogueiral e pô-las a secar.</p>
+                <a class="atividade__abrir" href="#apanha-da-noz">Ver como é<span class="visualmente-oculto">: Apanha da noz</span></a>
+              </li>
+              <li class="atividade" data-meses="11" id="cartao-apanha-da-azeitona">
+                <span class="atividade__meses">Novembro</span>
+                <h3>Apanha da azeitona</h3>
+                <p>Varejar as oliveiras, apanhar a azeitona dos panos e acompanhá-la até ao lagar.</p>
+                <a class="atividade__abrir" href="#apanha-da-azeitona">Ver como é<span class="visualmente-oculto">: Apanha da azeitona</span></a>
+              </li>
+              <li class="atividade" data-meses="11" id="cartao-magusto">
+                <span class="atividade__meses">Novembro</span>
+                <h3>Magusto de São Martinho</h3>
+                <p>Castanhas assadas na fogueira, ao fim do dia de apanha.</p>
+                <a class="atividade__abrir" href="#magusto">Ver como é<span class="visualmente-oculto">: Magusto de São Martinho</span></a>
+              </li>
+            </ul>
+          </section>
+          <section class="estacao pacotes" aria-labelledby="titulo-pacotes">
+            <h2 id="titulo-pacotes">Pacotes extra <small>pagos à parte</small></h2>
+            <p class="pacotes__texto">Para completar a estadia, organizamos saídas e provas fora da quinta. O preço é indicado na resposta ao pedido de reserva.</p>
+            <ul class="atividades__lista">
+              <li class="atividade atividade--pacote" data-meses="12 1 2 3 4" id="cartao-serra-neve">
+                <span class="atividade__meses">Dezembro a abril, com neve · pago à parte</span>
+                <h3>Serra com neve: ski e trenó</h3>
+                <p>Um dia na estância de ski da Serra da Estrela, com ski, snowboard e brincadeiras na neve.</p>
+                <a class="atividade__abrir" href="#serra-neve">Ver como é<span class="visualmente-oculto">: Serra com neve</span></a>
+              </li>
+              <li class="atividade atividade--pacote" data-meses="1 2 3 4 5 6 7 8 9 10 11 12" id="cartao-serra-guiada">
+                <span class="atividade__meses">Todo o ano · pago à parte</span>
+                <h3>Visita guiada à Serra da Estrela</h3>
+                <p>Torre, Vale do Rossim, Manteigas e o vale glaciar do Zêzere, com guia e transporte a partir da quinta.</p>
+                <a class="atividade__abrir" href="#serra-guiada">Ver como é<span class="visualmente-oculto">: Visita guiada à Serra da Estrela</span></a>
+              </li>
+              <li class="atividade atividade--pacote" data-meses="1 2 3 4 5 6 7 8 9 10 11 12" id="cartao-prova-de-vinhos">
+                <span class="atividade__meses">Todo o ano · pago à parte</span>
+                <h3>Prova de vinhos na Quinta Madre de Água</h3>
+                <p>Prova de cinco vinhos do Dão numa quinta vizinha, em Vinhó, Gouveia.</p>
+                <a class="atividade__abrir" href="#prova-de-vinhos">Ver como é<span class="visualmente-oculto">: Prova de vinhos na Quinta Madre de Água</span></a>
+              </li>
+              <li class="atividade atividade--pacote" data-meses="11 12 1 2 3 4" id="cartao-queijaria">
+                <span class="atividade__meses">Novembro a abril · pago à parte</span>
+                <h3>Visita à Queijaria Vale da Estrela</h3>
+                <p>Ver como se faz o queijo Serra da Estrela DOP, numa queijaria em Mangualde.</p>
+                <a class="atividade__abrir" href="#queijaria">Ver como é<span class="visualmente-oculto">: Visita à Queijaria Vale da Estrela</span></a>
+              </li>
+            </ul>
+          </section>
+        </div>
+
+        <aside class="inscricao" aria-labelledby="titulo-inscricao">
+          <div>
+            <h2 id="titulo-inscricao">Inscrição nas atividades</h2>
+            <p>As atividades e os pacotes são para quem tem reserva na quinta. Escolha-os no pedido de reserva.</p>
+          </div>
+          <a class="botao botao--claro" href="reservar.html">Reservar</a>
+        </aside>
+      </div>
+    </div>
+
+    <div class="detalhe" id="poda-da-vinha" role="dialog" aria-labelledby="titulo-poda-da-vinha">
+      <a class="detalhe__fundo" href="#cartao-poda-da-vinha" tabindex="-1" aria-hidden="true"></a>
+      <div class="detalhe__caixa">
+        <a class="detalhe__fechar" href="#cartao-poda-da-vinha" aria-label="Fechar">×</a>
+        <div class="detalhe__texto">
+          <span class="etiqueta">Atividade · Janeiro e fevereiro</span>
+          <h2 id="titulo-poda-da-vinha">Poda da vinha</h2>
+          <p>Começamos por ver como ficou a vinha depois do outono. Depois, cada pessoa recebe uma tesoura de poda e aprende que varas cortar e quais deixar para darem uva no ano seguinte.</p>
+          <dl class="detalhe__dados">
+            <dt>Quando</dt>
+            <dd>Janeiro e fevereiro</dd>
+            <dt>O que levar</dt>
+            <dd>Roupa quente, luvas e calçado para terra.</dd>
+            <dt>Inscrição</dt>
+            <dd>Para quem tem reserva na quinta, no formulário de reserva.</dd>
+          </dl>
+          <a class="botao" href="reservar.html">Reservar</a>
+        </div>
+      </div>
+    </div>
+    <div class="detalhe" id="prova-do-azeite-novo" role="dialog" aria-labelledby="titulo-prova-do-azeite-novo">
+      <a class="detalhe__fundo" href="#cartao-prova-do-azeite-novo" tabindex="-1" aria-hidden="true"></a>
+      <div class="detalhe__caixa">
+        <a class="detalhe__fechar" href="#cartao-prova-do-azeite-novo" aria-label="Fechar">×</a>
+        <div class="detalhe__texto">
+          <span class="etiqueta">Atividade · Dezembro e janeiro</span>
+          <h2 id="titulo-prova-do-azeite-novo">Prova do azeite novo</h2>
+          <p>Junto à lareira, prova-se o azeite acabado de chegar do lagar: primeiro simples, depois com pão quente e queijo da serra. Explicamos como se reconhece um bom azeite pelo cheiro e pelo sabor.</p>
+          <dl class="detalhe__dados">
+            <dt>Quando</dt>
+            <dd>Dezembro e janeiro</dd>
+            <dt>O que levar</dt>
+            <dd>Só o apetite.</dd>
+            <dt>Inscrição</dt>
+            <dd>Para quem tem reserva na quinta, no formulário de reserva.</dd>
+          </dl>
+          <a class="botao" href="reservar.html">Reservar</a>
+        </div>
+      </div>
+    </div>
+    <div class="detalhe" id="passeio-pomar-em-flor" role="dialog" aria-labelledby="titulo-passeio-pomar-em-flor">
+      <a class="detalhe__fundo" href="#cartao-passeio-pomar-em-flor" tabindex="-1" aria-hidden="true"></a>
+      <div class="detalhe__caixa">
+        <a class="detalhe__fechar" href="#cartao-passeio-pomar-em-flor" aria-label="Fechar">×</a>
+        <div class="detalhe__texto">
+          <span class="etiqueta">Atividade · Março e abril</span>
+          <h2 id="titulo-passeio-pomar-em-flor">Passeio pelo pomar em flor</h2>
+          <p>Passeio a pé pela quinta quando o pomar está em flor, com paragem no nogueiral e no olival. É a altura do ano em que a paisagem muda mais de semana para semana.</p>
+          <dl class="detalhe__dados">
+            <dt>Quando</dt>
+            <dd>Março e abril</dd>
+            <dt>O que levar</dt>
+            <dd>Calçado confortável e máquina fotográfica.</dd>
+            <dt>Inscrição</dt>
+            <dd>Para quem tem reserva na quinta, no formulário de reserva.</dd>
+          </dl>
+          <a class="botao" href="reservar.html">Reservar</a>
+        </div>
+      </div>
+    </div>
+    <div class="detalhe" id="caminhada-das-giestas" role="dialog" aria-labelledby="titulo-caminhada-das-giestas">
+      <a class="detalhe__fundo" href="#cartao-caminhada-das-giestas" tabindex="-1" aria-hidden="true"></a>
+      <div class="detalhe__caixa">
+        <a class="detalhe__fechar" href="#cartao-caminhada-das-giestas" aria-label="Fechar">×</a>
+        <div class="detalhe__texto">
+          <span class="etiqueta">Atividade · Maio</span>
+          <h2 id="titulo-caminhada-das-giestas">Caminhada das giestas</h2>
+          <p>Caminhada pela encosta acima da quinta, entre giestas em flor e com vista sobre o vale do Mondego. O ritmo é calmo e há paragens para descansar.</p>
+          <dl class="detalhe__dados">
+            <dt>Quando</dt>
+            <dd>Maio</dd>
+            <dt>O que levar</dt>
+            <dd>Calçado de caminhada, água e chapéu.</dd>
+            <dt>Inscrição</dt>
+            <dd>Para quem tem reserva na quinta, no formulário de reserva.</dd>
+          </dl>
+          <a class="botao" href="reservar.html">Reservar</a>
+        </div>
+      </div>
+    </div>
+    <div class="detalhe" id="apanha-da-fruta" role="dialog" aria-labelledby="titulo-apanha-da-fruta">
+      <a class="detalhe__fundo" href="#cartao-apanha-da-fruta" tabindex="-1" aria-hidden="true"></a>
+      <div class="detalhe__caixa">
+        <a class="detalhe__fechar" href="#cartao-apanha-da-fruta" aria-label="Fechar">×</a>
+        <div class="detalhe__texto">
+          <span class="etiqueta">Atividade · Junho e julho</span>
+          <h2 id="titulo-apanha-da-fruta">Apanha da cereja e da fruta</h2>
+          <p>Apanham-se as cerejas e a fruta madura diretamente das árvores do pomar. O que se apanha fica para o pequeno-almoço ou para levar para casa.</p>
+          <dl class="detalhe__dados">
+            <dt>Quando</dt>
+            <dd>Junho e julho</dd>
+            <dt>O que levar</dt>
+            <dd>Roupa leve e chapéu.</dd>
+            <dt>Inscrição</dt>
+            <dd>Para quem tem reserva na quinta, no formulário de reserva.</dd>
+          </dl>
+          <a class="botao" href="reservar.html">Reservar</a>
+        </div>
+      </div>
+    </div>
+    <div class="detalhe" id="apanha-dos-figos" role="dialog" aria-labelledby="titulo-apanha-dos-figos">
+      <a class="detalhe__fundo" href="#cartao-apanha-dos-figos" tabindex="-1" aria-hidden="true"></a>
+      <div class="detalhe__caixa">
+        <a class="detalhe__fechar" href="#cartao-apanha-dos-figos" aria-label="Fechar">×</a>
+        <div class="detalhe__texto">
+          <span class="etiqueta">Atividade · Agosto</span>
+          <h2 id="titulo-apanha-dos-figos">Apanha dos figos</h2>
+          <p>De manhã cedo, antes do calor, apanham-se os figos das figueiras junto ao pátio. Uma parte come-se logo e a outra fica para fazer doce.</p>
+          <dl class="detalhe__dados">
+            <dt>Quando</dt>
+            <dd>Agosto</dd>
+            <dt>O que levar</dt>
+            <dd>Roupa leve.</dd>
+            <dt>Inscrição</dt>
+            <dd>Para quem tem reserva na quinta, no formulário de reserva.</dd>
+          </dl>
+          <a class="botao" href="reservar.html">Reservar</a>
+        </div>
+      </div>
+    </div>
+    <div class="detalhe" id="apanha-da-uva" role="dialog" aria-labelledby="titulo-apanha-da-uva">
+      <a class="detalhe__fundo" href="#cartao-apanha-da-uva" tabindex="-1" aria-hidden="true"></a>
+      <div class="detalhe__caixa">
+        <a class="detalhe__fechar" href="#cartao-apanha-da-uva" aria-label="Fechar">×</a>
+        <div class="detalhe__texto">
+          <span class="etiqueta">Atividade · Setembro</span>
+          <h2 id="titulo-apanha-da-uva">Apanha da uva</h2>
+          <p>De tesoura e cesto na mão, percorrem-se as filas da vinha a cortar os cachos maduros. Os cestos cheios seguem para o lagar, onde depois se faz a pisa.</p>
+          <dl class="detalhe__dados">
+            <dt>Quando</dt>
+            <dd>Setembro</dd>
+            <dt>O que levar</dt>
+            <dd>Roupa que possa sujar, chapéu e, se quiser, luvas.</dd>
+            <dt>Inscrição</dt>
+            <dd>Para quem tem reserva na quinta, no formulário de reserva.</dd>
+          </dl>
+          <a class="botao" href="reservar.html">Reservar</a>
+        </div>
+      </div>
+    </div>
+    <div class="detalhe" id="pisa-das-uvas" role="dialog" aria-labelledby="titulo-pisa-das-uvas">
+      <a class="detalhe__fundo" href="#cartao-pisa-das-uvas" tabindex="-1" aria-hidden="true"></a>
+      <div class="detalhe__caixa">
+        <a class="detalhe__fechar" href="#cartao-pisa-das-uvas" aria-label="Fechar">×</a>
+        <div class="detalhe__texto">
+          <span class="etiqueta">Atividade · Setembro</span>
+          <h2 id="titulo-pisa-das-uvas">Pisa das uvas</h2>
+          <p>No fim da vindima, as uvas pisam-se a pé descalço, como se fazia antigamente, até o mosto começar a correr. É a atividade preferida das crianças.</p>
+          <p>Depois da pisa, o bagaço vai para a prensa de madeira do lagar, para tirar o resto do mosto.</p>
+          <dl class="detalhe__dados">
+            <dt>Quando</dt>
+            <dd>Setembro</dd>
+            <dt>O que levar</dt>
+            <dd>Calções ou roupa que se possa arregaçar.</dd>
+            <dt>Inscrição</dt>
+            <dd>Para quem tem reserva na quinta, no formulário de reserva.</dd>
+          </dl>
+          <a class="botao" href="reservar.html">Reservar</a>
+        </div>
+      </div>
+    </div>
+    <div class="detalhe" id="apanha-da-noz" role="dialog" aria-labelledby="titulo-apanha-da-noz">
+      <a class="detalhe__fundo" href="#cartao-apanha-da-noz" tabindex="-1" aria-hidden="true"></a>
+      <div class="detalhe__caixa">
+        <a class="detalhe__fechar" href="#cartao-apanha-da-noz" aria-label="Fechar">×</a>
+        <div class="detalhe__texto">
+          <span class="etiqueta">Atividade · Outubro</span>
+          <h2 id="titulo-apanha-da-noz">Apanha da noz</h2>
+          <p>Apanham-se as nozes que caem no nogueiral, separam-se da casca verde e põem-se a secar ao sol.</p>
+          <dl class="detalhe__dados">
+            <dt>Quando</dt>
+            <dd>Outubro</dd>
+            <dt>O que levar</dt>
+            <dd>Luvas: a casca verde da noz mancha as mãos.</dd>
+            <dt>Inscrição</dt>
+            <dd>Para quem tem reserva na quinta, no formulário de reserva.</dd>
+          </dl>
+          <a class="botao" href="reservar.html">Reservar</a>
+        </div>
+      </div>
+    </div>
+    <div class="detalhe" id="apanha-da-azeitona" role="dialog" aria-labelledby="titulo-apanha-da-azeitona">
+      <a class="detalhe__fundo" href="#cartao-apanha-da-azeitona" tabindex="-1" aria-hidden="true"></a>
+      <div class="detalhe__caixa">
+        <a class="detalhe__fechar" href="#cartao-apanha-da-azeitona" aria-label="Fechar">×</a>
+        <div class="detalhe__texto">
+          <span class="etiqueta">Atividade · Novembro</span>
+          <h2 id="titulo-apanha-da-azeitona">Apanha da azeitona</h2>
+          <p>Estendem-se os panos debaixo das oliveiras e varejam-se os ramos para a azeitona cair. Depois apanha-se dos panos e enchem-se as sacas que seguem para o lagar.</p>
+          <dl class="detalhe__dados">
+            <dt>Quando</dt>
+            <dd>Novembro</dd>
+            <dt>O que levar</dt>
+            <dd>Roupa quente e luvas.</dd>
+            <dt>Inscrição</dt>
+            <dd>Para quem tem reserva na quinta, no formulário de reserva.</dd>
+          </dl>
+          <a class="botao" href="reservar.html">Reservar</a>
+        </div>
+      </div>
+    </div>
+    <div class="detalhe" id="magusto" role="dialog" aria-labelledby="titulo-magusto">
+      <a class="detalhe__fundo" href="#cartao-magusto" tabindex="-1" aria-hidden="true"></a>
+      <div class="detalhe__caixa">
+        <a class="detalhe__fechar" href="#cartao-magusto" aria-label="Fechar">×</a>
+        <div class="detalhe__texto">
+          <span class="etiqueta">Atividade · Novembro</span>
+          <h2 id="titulo-magusto">Magusto de São Martinho</h2>
+          <p>Ao fim de um dia de apanha, assam-se castanhas na fogueira e conta-se como correu o dia. Pelo São Martinho é tradição em toda a região.</p>
+          <dl class="detalhe__dados">
+            <dt>Quando</dt>
+            <dd>Novembro</dd>
+            <dt>O que levar</dt>
+            <dd>Um agasalho para a noite.</dd>
+            <dt>Inscrição</dt>
+            <dd>Para quem tem reserva na quinta, no formulário de reserva.</dd>
+          </dl>
+          <a class="botao" href="reservar.html">Reservar</a>
+        </div>
+      </div>
+    </div>
+    <div class="detalhe" id="serra-neve" role="dialog" aria-labelledby="titulo-serra-neve">
+      <a class="detalhe__fundo" href="#cartao-serra-neve" tabindex="-1" aria-hidden="true"></a>
+      <div class="detalhe__caixa">
+        <a class="detalhe__fechar" href="#cartao-serra-neve" aria-label="Fechar">×</a>
+        <figure class="detalhe__media">
+          <img src="images/serra-neve-ski.jpg" alt="Uma pessoa de casaco vermelho a aprender a fazer ski na pista para principiantes, com outros esquiadores e os teleféricos ao fundo" width="1600" height="1065" loading="lazy">
+          <figcaption>A pista para principiantes da estância, perto da Torre. Da quinta são cerca de 45 minutos de carro. <span class="detalhe__credito">Foto: Estância de Ski Serra da Estrela</span></figcaption>
+        </figure>
+        <div class="detalhe__texto">
+          <span class="etiqueta">Pacote extra · Inverno, com neve</span>
+          <h2 id="titulo-serra-neve">Serra com neve: ski e trenó</h2>
+          <p>Quando a serra tem neve, levamos-vos à estância de ski, ao pé da Torre. Há pistas para quem começa e para quem já desce sozinho, e zonas abertas para andar de trenó e fazer bonecos de neve.</p>
+          <dl class="detalhe__dados">
+            <dt>Quando</dt>
+            <dd>De dezembro a abril, só nos dias em que há neve. Confirmamos na véspera.</dd>
+            <dt>Atividades</dt>
+            <dd>Ski e snowboard nas pistas da estância, com aulas para principiantes. Trenó e brincadeiras na neve nas zonas livres.</dd>
+            <dt>Material</dt>
+            <dd>Ski e snowboard alugam-se na estância. Levar roupa impermeável, luvas, gorro e óculos de sol.</dd>
+            <dt>Aulas e passes</dt>
+            <dd>Aula de grupo: 55 € por pessoa, a partir dos 4 anos (preço da estância, que pode mudar de época para época). Pode pedi-la no formulário de reserva ou marcá-la na <a href="https://skiserradaestrela.com/store/aulas" target="_blank" rel="noopener noreferrer">loja online da estância<span class="visualmente-oculto"> (abre noutro separador)</span></a>.</dd>
+            <dt>Preço</dt>
+            <dd>O transporte é pago à parte, sob consulta. O passe, as aulas e o aluguer pagam-se à estância.</dd>
+            <dt>Sem neve?</dt>
+            <dd>Fazemos a <a href="#serra-guiada">visita guiada à serra</a>.</dd>
+            <dt>Inscrição</dt>
+            <dd>Para quem tem reserva na quinta, no formulário de reserva.</dd>
+          </dl>
+          <a class="botao" href="reservar.html#pacotes">Reservar</a>
+        </div>
+      </div>
+    </div>
+    <div class="detalhe" id="serra-guiada" role="dialog" aria-labelledby="titulo-serra-guiada">
+      <a class="detalhe__fundo" href="#cartao-serra-guiada" tabindex="-1" aria-hidden="true"></a>
+      <div class="detalhe__caixa">
+        <a class="detalhe__fechar" href="#cartao-serra-guiada" aria-label="Fechar">×</a>
+        <figure class="detalhe__media">
+          <img src="images/serra-estrela-vale.jpg" alt="Vista do alto da Serra da Estrela, com rochas de granito, uma lagoa com barragem e uma estrada a descer o vale" width="500" height="500" loading="lazy">
+          <figcaption>A Serra da Estrela vista lá de cima, com uma das lagoas e a estrada a descer o vale.</figcaption>
+        </figure>
+        <div class="detalhe__texto">
+          <span class="etiqueta">Pacote extra · Todo o ano</span>
+          <h2 id="titulo-serra-guiada">Visita guiada à Serra da Estrela</h2>
+          <p>Um dia com guia pela serra, com transporte a partir da quinta. Sobe-se à Torre, pára-se no Vale do Rossim, desce-se a Manteigas pelo vale glaciar do Zêzere e almoça-se pelo caminho.</p>
+          <dl class="detalhe__dados">
+            <dt>Quando</dt>
+            <dd>Todo o ano. No inverno, nos dias sem neve para ski.</dd>
+            <dt>Duração</dt>
+            <dd>Dia inteiro, com saída de manhã da quinta.</dd>
+            <dt>O que levar</dt>
+            <dd>Calçado confortável e um casaco: lá em cima está sempre mais frio.</dd>
+            <dt>Preço</dt>
+            <dd>Pago à parte, sob consulta. O almoço é à parte.</dd>
+            <dt>Inscrição</dt>
+            <dd>Para quem tem reserva na quinta, no formulário de reserva.</dd>
+          </dl>
+          <a class="botao" href="reservar.html#pacotes">Reservar</a>
+        </div>
+      </div>
+    </div>
+    <div class="detalhe" id="prova-de-vinhos" role="dialog" aria-labelledby="titulo-prova-de-vinhos">
+      <a class="detalhe__fundo" href="#cartao-prova-de-vinhos" tabindex="-1" aria-hidden="true"></a>
+      <div class="detalhe__caixa">
+        <a class="detalhe__fechar" href="#cartao-prova-de-vinhos" aria-label="Fechar">×</a>
+        <figure class="detalhe__media">
+          <img src="images/madre-de-agua.jpg" alt="A casa de granito da Quinta Madre de Água ao fim da tarde, rodeada de vinha" width="1920" height="1280" loading="lazy">
+          <figcaption>A casa da Quinta Madre de Água, em Vinhó. <span class="detalhe__credito">Foto: Quinta Madre de Água</span></figcaption>
+        </figure>
+        <div class="detalhe__texto">
+          <span class="etiqueta">Pacote extra · Todo o ano</span>
+          <h2 id="titulo-prova-de-vinhos">Prova de vinhos na Quinta Madre de Água</h2>
+          <p>A poucos minutos da quinta, em Vinhó, a Madre de Água faz vinho do Dão ao pé da serra. Com um guia da casa, escolhe cinco vinhos para provar, acompanhados de produtos da região.</p>
+          <dl class="detalhe__dados">
+            <dt>Quando</dt>
+            <dd>Todos os dias, às 15:00 ou às 16:00. Dura cerca de uma hora.</dd>
+            <dt>Vinhos</dt>
+            <dd>Cinco à escolha: Encruzado, Bical, Colheita branco, Rosado, Colheita tinto, Touriga Nacional, Syrah ou Merlot.</dd>
+            <dt>Inclui</dt>
+            <dd>Guia, prova de vinhos, prova de produtos regionais e visita à loja.</dd>
+            <dt>Idioma</dt>
+            <dd>Português ou inglês.</dd>
+            <dt>Preço</dt>
+            <dd>Desde 30 € por adulto, pago à parte. Grupos de 4 ou mais têm 20% de desconto.</dd>
+            <dt>Regresso</dt>
+            <dd>Combinar antes quem conduz.</dd>
+            <dt>Inscrição</dt>
+            <dd>Para quem tem reserva na quinta, no formulário de reserva.</dd>
+          </dl>
+          <div class="detalhe__botoes">
+            <a class="botao" href="reservar.html#pacotes">Reservar</a>
+            <a class="botao botao--contorno" href="https://www.portugalbywine.com/pt/experiencias/info/quinta-madre-de-agua-prova-de-vinhos_1360/" target="_blank" rel="noopener">Ver a quinta<span class="visualmente-oculto"> (abre noutra janela)</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="detalhe" id="queijaria" role="dialog" aria-labelledby="titulo-queijaria">
+      <a class="detalhe__fundo" href="#cartao-queijaria" tabindex="-1" aria-hidden="true"></a>
+      <div class="detalhe__caixa">
+        <a class="detalhe__fechar" href="#cartao-queijaria" aria-label="Fechar">×</a>
+        <figure class="detalhe__media">
+          <img src="images/queijaria-vale-da-estrela.jpg" alt="A sala de entrada da Queijaria Vale da Estrela, com painéis sobre o queijo Serra da Estrela DOP" width="2500" height="1761" loading="lazy">
+          <figcaption>A entrada da Queijaria Vale da Estrela, em Mangualde. <span class="detalhe__credito">Foto: Vale da Estrela</span></figcaption>
+        </figure>
+        <div class="detalhe__texto">
+          <span class="etiqueta">Pacote extra · Novembro a abril</span>
+          <h2 id="titulo-queijaria">Visita à Queijaria Vale da Estrela</h2>
+          <p>Em Mangualde, a cerca de 40 minutos da quinta, a Vale da Estrela faz queijo Serra da Estrela DOP com leite de ovelha. Na visita guiada vê-se todo o processo, do leite à cura, e há vídeos sobre a pastorícia e o queijo na serra.</p>
+          <dl class="detalhe__dados">
+            <dt>Quando</dt>
+            <dd>Novembro a abril, na época do queijo. Dia e hora combinados com a queijaria.</dd>
+            <dt>O que se vê</dt>
+            <dd>A produção do queijo Serra da Estrela, do queijo Velho e do requeijão, todos DOP.</dd>
+            <dt>Loja</dt>
+            <dd>No fim pode comprar queijo e requeijão na loja da queijaria.</dd>
+            <dt>Preço</dt>
+            <dd>Pago à parte, sob consulta.</dd>
+            <dt>Inscrição</dt>
+            <dd>Para quem tem reserva na quinta, no formulário de reserva. Nós marcamos a visita.</dd>
+          </dl>
+          <div class="detalhe__botoes">
+            <a class="botao" href="reservar.html#pacotes">Reservar</a>
+            <a class="botao botao--contorno" href="https://www.valedaestrela.pt/vale-visitar-turismo/" target="_blank" rel="noopener">Ver a queijaria<span class="visualmente-oculto"> (abre noutra janela)</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape__grelha contentor">
+      <div>
+        <a class="marca" href="index.html">
+          <img src="images/logo-96.png" alt="" width="44" height="44">
+          <span>Quinta de Santa Guilha</span>
+        </a>
+        <p class="rodape__frase">Turismo rural em Gouveia, na encosta da Serra da Estrela.</p>
+      </div>
+      <nav aria-label="Páginas do site">
+        <h2 class="rodape__titulo">A quinta</h2>
+        <ul class="rodape__ligacoes">
+          <li><a href="casa.html">A Casa</a></li>
+          <li><a href="quinta.html">A Quinta</a></li>
+          <li><a href="ano-na-quinta.html">O ano na quinta</a></li>
+          <li><a href="regiao.html">Região</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Informações">
+        <h2 class="rodape__titulo">Informações</h2>
+        <ul class="rodape__ligacoes">
+          <li><a href="sobre-nos.html">Sobre nós</a></li>
+          <li><a href="perguntas-frequentes.html">Perguntas frequentes</a></li>
+          <li><a href="reservar.html">Reservar</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="rodape__titulo">Contactos</h2>
+        <address>
+          Quinta de Santa Guilha<br>
+          6290-329 Gouveia, Guarda<br>
+          <a href="tel:+351900000000">+351 900 000 000</a><br>
+          <a href="mailto:reservasquintadesantaguilha@gmail.com">reservasquintadesantaguilha@gmail.com</a>
+        </address>
+      </div>
+    </div>
+    <div class="rodape__fim contentor">
+      <p>&copy; 2026 Quinta de Santa Guilha · Alojamento Local n.º 000000/AL</p>
+      <a href="https://www.livroreclamacoes.pt/">Livro de Reclamações</a>
+    </div>
+  </footer>
+</body>
+</html>
