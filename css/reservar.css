@@ -47,6 +47,21 @@
   resize: vertical;
 }
 
+/* No iPhone, os campos de data e hora têm uma largura mínima própria
+   e saem da caixa. Assim ficam com a largura dos outros campos. */
+.campo input[type="date"],
+.campo input[type="time"] {
+  display: block;
+  min-width: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  text-align: left;
+}
+
+.campo input::-webkit-date-and-time-value {
+  text-align: left;
+}
+
 .campo input:focus,
 .campo select:focus,
 .campo textarea:focus {
@@ -255,9 +270,12 @@
 
 /* Os detalhes ficam escondidos (atributo hidden) até a pessoa escolher o pacote.
    O JavaScript (js/reservar.js) tira o hidden. */
+/* Duas colunas iguais; os campos alinham-se por baixo, mesmo quando
+   um dos títulos ocupa duas linhas. */
 .pacote-detalhes {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: end;
   gap: 0.75rem 1rem;
   margin: 0.35rem 0 0.9rem 1.8rem;
   padding: 1rem;
@@ -328,9 +346,10 @@
   font-size: 0.85rem;
 }
 
-/* No telemóvel, os detalhes ocupam a largura toda */
+/* No telemóvel, os detalhes ocupam a largura toda, numa só coluna */
 @media (max-width: 560px) {
   .pacote-detalhes {
+    grid-template-columns: minmax(0, 1fr);
     margin-left: 0;
   }
 }
