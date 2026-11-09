@@ -54,7 +54,6 @@ Início ......................... apresentação da quinta e destaques das pági
 
 Os seguintes extras estão previstos, mas ainda não fazem parte desta entrega:
 
-- Versão em inglês do website
 - Calendário de disponibilidade com as datas já ocupadas
 - Estimativa do preço da estadia
 - Mapa interativo com os lugares a visitar na região
