@@ -38,13 +38,14 @@ Início ......................... apresentação da quinta e destaques das pági
 
 ### Básicas
 
-- Menu de navegação com o submenu Informações; no telemóvel ocupa o ecrã inteiro
+- Menu de navegação com o submenu Informações; no telemóvel e no tablet ocupa o ecrã inteiro
 - Design responsivo para telemóvel, tablet e computador
 - Página inicial com vídeo de drone ou imagem da quinta e slideshow de fotografias
 - Páginas da casa, da quinta, da região e Sobre nós
 - Página "O ano na quinta" com gráfico das horas de luz e do trabalho de cada mês
 - Atividades por época do ano (apanha da uva, pisa das uvas, apanha da azeitona), filtradas ao escolher um mês no gráfico
 - Inscrição nas atividades para quem tem reserva na quinta
+- Pacotes extra pagos à parte: Serra com neve, visita guiada à Serra da Estrela, prova de vinhos e visita à queijaria
 - Galeria em que cada fotografia abre em tamanho grande para mostrar os detalhes
 - Perguntas frequentes organizadas por categorias
 - Formulário de pedido de reserva com validação básica; integração dos dados com email e WhatsApp prevista para uma entrega seguinte
@@ -163,7 +164,7 @@ quinta_santa_guilha/
 │   └── reservar.js            atividades e pacotes do formulário de reserva
 ├── fonts/
 ├── images/
-└── videos/                    vídeo de drone da página inicial
+└── videos/                    vídeos de drone da página inicial e de A Quinta
 ```
 
 Os elementos interativos feitos com JavaScript:
@@ -177,7 +178,7 @@ Os elementos interativos feitos só com HTML e CSS:
 - Menu do telemóvel em ecrã inteiro: caixa de seleção escondida e o seletor `:checked`
 - Submenu Informações e respostas das perguntas frequentes: elemento `<details>`
 - Fotografias da galeria: cada miniatura é uma ligação para a fotografia grande
-- Janela de cada atividade e pacote extra, com fotografia e descrição: seletor `:target`
+- Janela de cada atividade (só texto) e de cada pacote extra (com fotografia e descrição): seletor `:target`
 - Validação do formulário de reserva: atributos `required`, `type="email"` e `pattern`
 
 ## Próximos passos
@@ -198,5 +199,5 @@ Websites que serviram de referência e o que se aproveitou de cada um.
 | Website | O que se aproveitou |
 |---|---|
 | [São Lourenço do Barrocal](https://barrocal.pt/) | Vídeo em ecrã inteiro na abertura da página inicial. A página de atividades, em que cada atividade tem fotografia, título e uma frase, e o calendário de eventos ao longo do ano deram a ideia para "O ano na quinta". |
-| [Craveiral Farmhouse](https://www.craveiral.pt/) | Abertura da página inicial com uma imagem grande, botão Reservar destacado no topo. |
+| [Craveiral Farmhouse](https://www.craveiral.pt/) | Abertura da página inicial com uma imagem grande e botão Reservar destacado no topo. |
 | [Quinta da Estrela](https://quintadaestrela.com/pt-pt/) | Website de uma quinta de turismo rural da mesma região, a Serra da Estrela. |
