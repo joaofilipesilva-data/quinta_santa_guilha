@@ -81,13 +81,14 @@
     <section class="seccao seccao--pedra seccao--fim-amplo" aria-labelledby="titulo-imagens">
       <div class="contentor">
         <h2 id="titulo-imagens">A quinta em imagens</h2>
-        <div class="slides">
+        <div class="slides" id="slides" role="region" aria-roledescription="carrossel" aria-label="Fotografias da quinta" tabindex="0">
           <img id="slide-imagem" src="images/fachada-vale.jpg" alt="Fachada de granito ao fim da tarde, com o vale ao fundo" width="1600" height="1200">
           <p id="slide-legenda" class="slides__legenda">A casa ao fim da tarde, virada para o vale.</p>
           <button type="button" id="slide-anterior" class="slides__seta slides__seta--anterior" aria-label="Fotografia anterior">‹</button>
           <button type="button" id="slide-seguinte" class="slides__seta slides__seta--seguinte" aria-label="Fotografia seguinte">›</button>
         </div>
-        <p id="slide-numero" class="slides__numero">1 / 5</p>
+        <div id="slide-pontos" class="slides__pontos"></div>
+        <p id="slide-numero" class="visualmente-oculto" aria-live="polite">Fotografia 1 de 5</p>
       </div>
     </section>
 

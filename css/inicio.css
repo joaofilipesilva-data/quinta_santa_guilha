@@ -127,10 +127,46 @@
   right: 0.75rem;
 }
 
-.slides__numero {
-  margin-top: 0.75rem;
-  text-align: center;
-  color: var(--suave);
+/* Pontos por baixo do slideshow: cada um é um botão de 44px para ser fácil
+   de tocar, mas o ponto visível é pequeno. */
+.slides__pontos {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.slides__ponto {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slides__ponto::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--verde);
+  border-radius: 50%;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+/* Só em ecrãs com rato: no telemóvel o "hover" ficava preso depois do toque. */
+@media (hover: hover) {
+  .slides__ponto:hover::before {
+    background-color: var(--verde-claro);
+  }
+}
+
+.slides__ponto[aria-current="true"]::before {
+  background-color: var(--verde);
+  transform: scale(1.2);
 }
 
 /* Cartões para explorar o resto do site */
