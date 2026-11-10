@@ -102,13 +102,13 @@ No telemóvel, a página inicial aparece em três ecrãs (o topo, a parte seguin
 
 ## Código
 
-O site é feito em HTML e CSS, com design responsivo para telemóvel, tablet e computador. O slideshow, o filtro por mês e o formulário de reserva usam três ficheiros pequenos de JavaScript.
+O site é feito em HTML e CSS, com design responsivo para telemóvel, tablet e computador. O slideshow, o vídeo de A Quinta, o filtro por mês e o formulário de reserva usam quatro ficheiros pequenos de JavaScript.
 
 ### Tecnologias
 
 - **HTML5** — estrutura e conteúdo das páginas.
 - **CSS3** — estilos, layout responsivo, menu do telemóvel e perguntas frequentes.
-- **JavaScript** — slideshow, filtro por mês e formulário de reserva, sem bibliotecas externas.
+- **JavaScript** — slideshow, vídeo que só toca quando está visível, filtro por mês e formulário de reserva, sem bibliotecas externas.
 - **Backend e base de dados** — não são usados nesta versão.
 
 ### Requisitos
@@ -160,6 +160,7 @@ quinta_santa_guilha/
 │   └── (um ficheiro por página)
 ├── js/
 │   ├── slides.js              slideshow da página inicial
+│   ├── video-ao-ver.js        vídeo de A Quinta, que só toca quando está no ecrã
 │   ├── ano-na-quinta.js       filtro por mês de O ano na quinta
 │   └── reservar.js            atividades e pacotes do formulário de reserva
 ├── fonts/
@@ -169,7 +170,8 @@ quinta_santa_guilha/
 
 Os elementos interativos feitos com JavaScript:
 
-- Slideshow da página inicial: setas que trocam a fotografia, a legenda e o número (`js/slides.js`)
+- Slideshow da página inicial: troca a fotografia e a legenda com as setas, com o teclado (← →), deslizando o dedo no telemóvel ou carregando nos pontos por baixo. A fotografia seguinte e a anterior ficam já descarregadas, para a troca ser imediata (`js/slides.js`)
+- Vídeo de A Quinta: só descarrega e toca quando aparece no ecrã (com `IntersectionObserver`) e pára quando sai. Há uma versão em 1080p para computador e outra mais leve para telemóvel. Quem prefere menos movimento ou tem a poupança de dados ligada vê só a imagem inicial (`js/video-ao-ver.js`)
 - Filtro por mês em O ano na quinta: cada atividade indica os seus meses em `data-meses` e o script esconde as que não são do mês escolhido (`js/ano-na-quinta.js`)
 - Atividades do formulário de reserva conforme o mês escolhido (preenchido a partir da data de chegada; só se podem escolher os meses da estadia) e detalhes de cada pacote extra; os campos escondidos ficam desativados e não vão no pedido, e a data de partida tem de ser depois da chegada (`js/reservar.js`)
 
