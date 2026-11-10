@@ -1,13 +1,17 @@
 /* Página de reservas: o formulário, os contactos e o mapa */
 
+/* minmax(0, 1fr): a coluna encolhe até à largura do ecrã. Só com 1fr,
+   alargava para caber os campos de data e saía do ecrã a 320px. */
 .reservar {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 3rem;
 }
 
 /* O formulário */
 .formulario {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.25rem;
 }
 
@@ -182,6 +186,7 @@
 /* Contactos e mapa */
 .contactos {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.25rem;
   align-content: start;
 }
@@ -200,6 +205,8 @@
 
 .contactos dd {
   margin: 0.2rem 0 1.1rem;
+  /* O email é uma palavra comprida: em ecrãs estreitos, pode partir em duas linhas. */
+  overflow-wrap: anywhere;
 }
 
 .mapa {
@@ -219,7 +226,7 @@
 /* Ecrãs médios (a partir de 600px) */
 @media (min-width: 600px) {
   .formulario {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 1.25rem;
   }
 
@@ -234,7 +241,7 @@
 /* Ecrãs grandes (a partir de 960px) */
 @media (min-width: 960px) {
   .reservar {
-    grid-template-columns: 1.7fr 1fr;
+    grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
     gap: 4rem;
   }
 }

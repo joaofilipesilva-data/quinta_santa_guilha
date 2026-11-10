@@ -26,7 +26,7 @@
 
 .grafico__meses {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   align-items: end;
   gap: 0.25rem;
   margin: 1.5rem 0 1.25rem;
@@ -75,6 +75,22 @@
 .grafico__nome {
   font-size: 0.75rem;
   font-weight: 600;
+}
+
+/* Telemóveis muito estreitos (320px): os 12 meses só cabem com
+   menos espaço entre as barras e o nome do mês um pouco mais pequeno. */
+@media (max-width: 359px) {
+  .grafico {
+    padding: 1rem 0.75rem;
+  }
+
+  .grafico__meses {
+    gap: 2px;
+  }
+
+  .grafico__nome {
+    font-size: 0.65rem;
+  }
 }
 
 .grafico__horas {
