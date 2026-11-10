@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/rodape.css">
   <link rel="stylesheet" href="css/quinta.css">
+  <script src="js/video-ao-ver.js" defer></script>
 </head>
 <body>
   <a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
@@ -118,7 +119,10 @@
       <div class="contentor">
         <h2 id="titulo-vista">Vista de cima</h2>
         <figure class="quinta__imagem-larga">
-          <video src="videos/passeio-quinta.mp4" poster="images/passeio-quinta.jpg" width="1024" height="576" autoplay muted loop playsinline controls preload="metadata" aria-label="Vídeo de drone à volta da casa, da piscina e dos terrenos da quinta ao fim da tarde"></video>
+          <video poster="images/passeio-quinta.jpg" width="1920" height="1080" muted loop playsinline controls preload="none" data-tocar-ao-ver aria-label="Vídeo de drone à volta da casa, da piscina e dos terrenos da quinta ao fim da tarde">
+            <source src="videos/passeio-quinta.mp4" type="video/mp4" media="(min-width: 960px)">
+            <source src="videos/passeio-quinta-telemovel.mp4" type="video/mp4">
+          </video>
           <figcaption>Uma volta de drone à casa, à piscina e aos terrenos, ao fim da tarde.</figcaption>
         </figure>
       </div>
